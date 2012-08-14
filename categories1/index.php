@@ -1,8 +1,7 @@
 <?php
-require 'model/categories.php';
-require 'model/products.php';
+
+require 'model/cats.php';
 
 
-$products = get_products();
+$cats = get_cats();
 include 'views/list.php';
-?>

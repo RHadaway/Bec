@@ -14,10 +14,11 @@ ActiveRecord\Config::initialize(function($cfg)
 });
 
 if(array_key_exists('submit', $_POST)){
+	$omealstogether = new mealstogether;
 	$omealstogether->date = $_POST['date'];
 	$omealstogether->members = $_POST['members'];
 	$omealstogether->save();
-	print_r($omealstogether);
+	//print_r($omealstogether);
 }
 
 

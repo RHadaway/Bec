@@ -7,9 +7,8 @@
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";# MySQL returned an empty result set (i.e. zero rows).
-
-SET time_zone = "+00:00";# MySQL returned an empty result set (i.e. zero rows).
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 
@@ -29,10 +28,10 @@ SET time_zone = "+00:00";# MySQL returned an empty result set (i.e. zero rows).
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mealstogether`
+-- Table structure for table `mealstogethers`
 --
 
-CREATE TABLE IF NOT EXISTS `mealstogether` (
+CREATE TABLE IF NOT EXISTS `mealstogethers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date DEFAULT NULL,
   `members` int(11) DEFAULT NULL,

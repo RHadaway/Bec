@@ -9,7 +9,7 @@
 		
 		</tr>
 
-		<?php foreach(mealstogether::find('all') as $mealstogether){?>
+		<?php foreach(mealstogether::find('all') as $omealstogether){?>
 
 		<tr>
 			<td><?php echo $omealstogether->date ?>

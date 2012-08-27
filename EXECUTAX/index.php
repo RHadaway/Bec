@@ -1,5 +1,17 @@
 <?php 
+require '../ActiveRecord/ActiveRecord.php';
 
+ActiveRecord\Config::initialize(function($cfg)
+{
+	$cfg->set_model_directory('model');
+	$cfg->set_connections(
+			array(
+					'development' => 'mysql://root:@localhost/executax',
+					'test' => 'mysql://username:password@localhost/test_database_name',
+					'production' => 'mysql://username:password@localhost/production_database_name'
+			)
+	);
+});
 
 $action = array_key_exists('action', $_POST)?$_POST['action']:'';
 
@@ -19,8 +31,21 @@ $headers = 'From:' .$_SERVER['SERVER_ADMIN']. "\r\n" .
 
 // Send
 if(mail($_POST['contact'], '$subject', $message))
+
 	{	
+		
+			$oEmail = new Email;
+			$oEmail->name = $_POST['name'];
+			$oEmail->cemail = $_POST['cemail'];
+			$oEmail->dphone = $_POST['dphone'];
+			$oEmail->nphone = $_POST['nphone'];
+			$oEmail->subject = $_POST['subject'];
+			$oEmail->message = $_POST['message'];
+			$oEmail->save();
+			print_r($oEmail);
+		
 		echo 'mail sent';
+		
 	}
 	else
 	{
@@ -28,4 +53,5 @@ if(mail($_POST['contact'], '$subject', $message))
 	}
 
 }include 'views/contact.php';
+
 ?>

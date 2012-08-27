@@ -14,7 +14,7 @@
 	<label>Day Phone Number:</label><input type='text' name='dphone'/><br />
 	<label>Evening Phone Number:</label><input type='text' name='nphone'/><br />
 	<label>Subject:</label><input type='text' name='subject'/><br />
-		<textarea rows="5" cols="20" name="quote" wrap="physical">Message:</textarea>
+		<textarea rows="5" cols="20" name="message" wrap="physical">Message:</textarea>
 	
 	<input type='submit' name='action' value='contact'/> 
 

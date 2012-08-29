@@ -1,3 +1,5 @@
+
+ 
 <?php 
 require '../ActiveRecord/ActiveRecord.php';
 
@@ -13,10 +15,11 @@ ActiveRecord\Config::initialize(function($cfg)
 	);
 });
 
-$action = array_key_exists('action', $_POST)?$_POST['action']:'';
+$action = (array_key_exists('action', $_POST)?$_POST['action']:'');
+$action = (array_key_exists('action', $_GET)?$_GET['action']: $action);
 
-if($action == 'contact'){
-print_r($_POST);
+if($action == 'Send'){
+//print_r($_POST);
 // The message
 $message = $_POST['message'];
 $subject = $_POST['subject'];
@@ -42,16 +45,24 @@ if(mail($_POST['contact'], '$subject', $message))
 			$oEmail->subject = $_POST['subject'];
 			$oEmail->message = $_POST['message'];
 			$oEmail->save();
-			print_r($oEmail);
+			//print_r($oEmail);
 		
-		echo 'mail sent';
+		//echo 'mail sent';
+		include 'views/thankyou.php';
 		
 	}
 	else
 	{
-		echo 'mail failed';
+		//echo 'mail failed';
+		
 	}
 
-}include 'views/contact.php';
+}
+elseif($action == 'contact'){
+include 'views/contact.php';
+}
+else{
+	include 'views/home.php';
+}
 
 ?>

@@ -1,6 +1,9 @@
 <?php
 
+include 'views/list.php';
 include 'views/results.php';
+
+
  header("Content-Type: text/plain");
  $sIn = file_get_contents("http://www.wowjobs.ca/wowrss.aspx?q=Web+Developer&l=N2T1G8&s=&sr=25&t=30&f=r&e=&si=A&Dup=H");
  if(preg_match_all("|<item(.*)</item>|U", $sIn, $aItem)){
@@ -20,7 +23,7 @@ include 'views/results.php';
  	 	if(preg_match_all("|<link(.*)</link>|U", $sItem, $aLink)){
  			echo $aLink[0][0]  . "\n";
  		}
- 	 	if(preg_match_all("|<pubDate(.*)</pubDate>|U", $sItem, $aDate)){
+ 	 	if(preg_match_all("|<pubdate(.*)</pubdate>|U", $sItem, $aDate)){
  			echo $aDate[0][0]  . "\n";
  		}
  	 	if(preg_match_all("|<author(.*)</author>|U", $sItem, $aAuthor)){

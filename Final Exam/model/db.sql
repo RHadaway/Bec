@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `jobhunt` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pubDate` date NOT NULL,
+  `pubdate` date NOT NULL,
   `title` varchar(25) NOT NULL,
   `description` varchar(100) NOT NULL,
   `link` varchar(35) NOT NULL,
@@ -38,23 +38,6 @@ CREATE TABLE IF NOT EXISTS `jobhunt` (
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `jobhunt3`
---
 
-CREATE TABLE IF NOT EXISTS `jobhunt3` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `datep` date NOT NULL,
-  `title` varchar(25) NOT NULL,
-  `description` varchar(100) NOT NULL,
-  `link` varchar(50) NOT NULL,
-  `postedby` varchar(25) NOT NULL,
-  `nextaction` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 

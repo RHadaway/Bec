@@ -2,10 +2,10 @@
 <form action='.' method='post'>
 
 <?php
-foreach(Result::find('all') as $sResult){?>
+foreach(Results::find('all') as $oGuid){?>
 <p>
-	<?php echo $sResult->result;?>
-	<a href="?action=Delete&result=<?php echo $sResult->result; ?>">
+	<?php echo $oGuid->results;?>
+	<a href="?action=Delete&result=<?php echo $oGuid->guid; ?>">
 	<img src='views/images/cross.png' alt='Delete';/>
 	</a>
 	

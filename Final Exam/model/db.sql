@@ -29,7 +29,8 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `jobhunt` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pubdate` date NOT NULL,
-  `title` varchar(25) NOT NULL,
+  `guid` varchar(50) NOT NULL,
+  `title` varchar(25) NOT NULL,  
   `description` varchar(100) NOT NULL,
   `link` varchar(35) NOT NULL,
   `author` int(25) NOT NULL,

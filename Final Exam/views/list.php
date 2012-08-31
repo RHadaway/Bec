@@ -8,16 +8,16 @@
 		
 		</tr>
 
-		<?php foreach(Results::find('all') as $oresults){?>
+		<?php foreach(guid::find('all') as $guid){?>
 
 		<tr>
-			<td><?php echo $oresults->pubdate ?>
+			<td><?php echo $guid->pubdate ?>
 			</td>
-			<td><?php echo $oresults->title?>
+			<td><?php echo $guid->title?>
 			</td>
-			<td><?php echo $oresults->link?>
+			<td><?php echo $guid->link?>
 			</td>
-			<td><?php echo $oresults->nextaction?>
+			<td><?php echo $guid->nextaction?>
 			</td>
 		</tr>
 

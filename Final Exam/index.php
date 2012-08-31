@@ -1,7 +1,7 @@
 <?php
 
 include 'views/list.php';
-include 'views/results.php';
+include 'views/Results.php';
 
 
  header("Content-Type: text/plain");

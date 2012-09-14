@@ -1,16 +1,19 @@
 
- 
 <?php 
 require '../ActiveRecord/ActiveRecord.php';
+
 
 ActiveRecord\Config::initialize(function($cfg)
 {
 	$cfg->set_model_directory('model');
+	if($_SERVER['SERVER_PORT'] != 8080){
+		$cfg->set_default_connection('production');
+	}
 	$cfg->set_connections(
 			array(
 					'development' => 'mysql://root:@localhost/executax',
 					'test' => 'mysql://username:password@localhost/test_database_name',
-					'production' => 'mysql://username:password@localhost/production_database_name'
+					'production' => 'mysql://rhadaway:executax@localhost/executax'
 			)
 	);
 });

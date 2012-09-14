@@ -1,6 +1,64 @@
+/*
+	Website:  		Job Search Site - PHP Class Project
+	Developer:		
+	Created On:		Sept 6 2012
+	Revised On:
+	CSS Version: 	3
+	
+	Purpose:
+	
+	Related Files:
+		index.php
+		
+*/
+
+/* ------------------ Reset ------------------ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, 
+samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1.25;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ------------------ End Reset ------------------ */
+
 body{
-	background: #ADD5F7;
-    font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
+	background: #FFF;
+    font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
     margin: 0 auto;
     padding: 0;
     width: 960px;
@@ -16,18 +74,22 @@ container {
 	
 h1 {
     color: black;
+    font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
     font-weight: 700;
 	font-style: italic;
 	font-size: 4em;
-	margin-bottom: 1px;
+	margin-bottom: 0;
 }
 
 h2 {
+	border-bottom: 2px dotted #5f5f5f;
     color: #35478C;
+    font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
     font-weight: 400;
 	font-style: italic;
 	padding-top: 1px;
 	margin-top: 1px;
+	width:960px;
 }
 
 h3{
@@ -38,43 +100,62 @@ h3{
 h4{
 	clear:left;
 }
+
+nav ul{
+
+	border: 1px dotted #187ABB;
+	border-radius:  0px 0px 0px 0px;
+	
+	width: 960px;
+}
 nav ul li{
+	background-color: #ADD5F7;
 	color: #4E7AC7;
-	float:left;
+
 	list-style: none;
 	text-decoration:none;
 	font-size: 225%;
-	font-weight: 700;
+	font-weight: 400;
 	padding-right: 50px;
-	padding-bottom: 50px;
+
+	text-align: right;
 }
 
 nav ul li a{
+	
+	color: #fff;
 	text-decoration:none;
+	
+}
+
+fieldset{
+	clear: left;
+}
+
+legend{
+	font-weight: 700;
+	padding-top: 50px;
 }
 
 label {
-    width: 12em;
-    padding-right: 1em;
+    width: 14em;
     float: left;
 }
 
 select{
 	display: block;
-	margin-left: 16em;	
+	
 }
 
 
-#data input {
-    float: left;
-    width: 15em;
-    margin-bottom: .5em;
+input {
+	display: block;
+    width: 150px;
 }
 
 textarea{
-	border: 0;
 	resize: none;
-	margin:0px;
+	margin: 0px;
 	margin-top: 2px;
 }
 

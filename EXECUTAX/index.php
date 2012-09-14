@@ -1,22 +1,17 @@
 
 <?php 
-require '../ActiveRecord/ActiveRecord.php';
+require_once('../adodb5/adodb.inc.php');
+require_once('../adodb5/adodb-active-record.inc.php');
 
+$db = null;
+if($_SERVER['SERVER_PORT'] == 8080){
+	$db = NewADOConnection('mysql://root:@localhost/executax');
+}else{
+	$db = NewADOConnection('mysql://rhadaway:executax@custsql-nf12.eigbox.net/executax');
+}
 
-ActiveRecord\Config::initialize(function($cfg)
-{
-	$cfg->set_model_directory('model');
-	if($_SERVER['SERVER_PORT'] != 8080){
-		$cfg->set_default_connection('production');
-	}
-	$cfg->set_connections(
-			array(
-					'development' => 'mysql://root:@localhost/executax',
-					'test' => 'mysql://username:password@localhost/test_database_name',
-					'production' => 'mysql://rhadaway:executax@localhost/executax'
-			)
-	);
-});
+ADOdb_Active_Record::SetDatabaseAdapter($db);
+class Email extends ADOdb_Active_Record{}
 
 $action = (array_key_exists('action', $_POST)?$_POST['action']:'');
 $action = (array_key_exists('action', $_GET)?$_GET['action']: $action);
@@ -56,7 +51,7 @@ if(mail($_POST['contact'], '$subject', $message))
 	}
 	else
 	{
-		//echo 'mail failed';
+		echo 'mail failed';
 		
 	}
 

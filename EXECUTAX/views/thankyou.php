@@ -47,19 +47,8 @@
 		<div id="page_wrap">
 			<div id="container">
 			
-		<header>
-				<h1>EXECUTAX</h1>
-				<h2>Professional Income Tax Preparation</h2>
-					<nav>
-						<ul>
-							<li> <a href="#" id="home">Home</a></li>
-							<li> <a href="#" id="aboutUs">About Us</a></li>
-							<li> <a href="?action=contact" id="contact" >Contact</a></li>
-							<li> <a href="#" id="FAQ">FAQ</a></li>
-						</ul>
-					</nav>
-		</header><!--header -->
-				
+		<?php 	include 'views/header.php';?>
+		
 				<div id="sidebar">
 				</div><!--sidebar -->
 				
@@ -69,10 +58,8 @@
 				</div><!-- main -->	
 			
 
-				<footer>
-					<p>Executax &copy;2012. All Rights Reserved.</p>
-				</footer><!--footer -->
-			
+				<?php 	include 'views/footer.php';?>
+				
 			</div><!--container -->
 		</div><!--page_wrap -->
 

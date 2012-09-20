@@ -77,7 +77,7 @@ h1 {
     font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
     font-weight: 700;
 	font-style: italic;
-	font-size: 4em;
+	font-size: 3em;
 	margin-bottom: 0;
 }
 
@@ -86,6 +86,7 @@ h2 {
     color: #35478C;
     font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
     font-weight: 400;
+    font-size: 1em;
 	font-style: italic;
 	padding-bottom: 5px;
 	width:960px;
@@ -94,8 +95,7 @@ h2 {
 h3{
 	clear: left;
 	color: #35478C;
-	font-size: 150%;
-	padding-top: 10px;
+	margin-top: 20px;
 	padding-bottom: 10px;
 }
 
@@ -107,7 +107,7 @@ nav ul li{
 	background-color: #ADD5F7;
 	list-style: none;
 	text-decoration:none;
-	font-size: 175%;
+	font-size: 125%;
 	font-weight: 400;
 	padding-right: 50px;
 	padding-bottom: 10px;

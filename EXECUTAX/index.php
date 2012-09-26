@@ -3,15 +3,16 @@
 require_once('../adodb5/adodb.inc.php');
 require_once('../adodb5/adodb-active-record.inc.php');
 
-$db = null;
+$db = NewADOConnection('mysql');
 if($_SERVER['SERVER_PORT'] == 8080){
-	$db = NewADOConnection('mysql://root:@localhost/executax');
+	$db->Connect("localhost", "root", "", "executax");
 }else{
-	$db = NewADOConnection('mysql://rhadaway:executax@custsql-nf12.eigbox.net/executax');
+	$db->Connect('rhadaway.netfirmsmysql.com', 'rhadaway', 'executax', "executax");
 }
 
+
 ADOdb_Active_Record::SetDatabaseAdapter($db);
-class Email extends ADOdb_Active_Record{}
+class email extends ADOdb_Active_Record{}
 
 $action = (array_key_exists('action', $_POST)?$_POST['action']:'');
 $action = (array_key_exists('action', $_GET)?$_GET['action']: $action);
@@ -35,13 +36,15 @@ if(mail($_POST['contact'], '$subject', $message))
 
 	{	
 		
-			$oEmail = new Email;
+			$oEmail = new email;
 			$oEmail->name = $_POST['name'];
 			$oEmail->cemail = $_POST['cemail'];
 			$oEmail->dphone = $_POST['dphone'];
 			$oEmail->nphone = $_POST['nphone'];
 			$oEmail->subject = $_POST['subject'];
 			$oEmail->message = $_POST['message'];
+			$oDate = new DateTime();
+			$oEmail->date = $oDate->format("Y-m-d");
 			$oEmail->save();
 			//print_r($oEmail);
 		
@@ -62,5 +65,11 @@ include 'views/contact.php';
 else{
 	include 'views/home.php';
 }
+
+//?action = add rss;
+
+//if($action == 'displayrss'){
+	//include 'model/rssfeed.php';
+//}
 
 ?>

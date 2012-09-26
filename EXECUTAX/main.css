@@ -53,23 +53,6 @@ table {
 
 /* ------------------ End Reset ------------------ */
 
-
-@media only screen 
-and (min-width : 1224px) {
-	
-	body{
-		background: #FFF;
-	    font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
-	    margin: 0 auto;
-	    padding: 0;
-		width: 100%;
-	}
-	
-	#page {
-		width: 50.44666316342617%;
-		margin: 0 auto;
-	}
-	
 	
 	container {
 	    width: 450px;
@@ -178,23 +161,52 @@ and (min-width : 1224px) {
 	.show{
 		display: block;
 	}
-}
 
 @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-/* Styles */
+and (min-width : 1224px) {
+	
+	#page {
+		width: 50.44666316342617%;
+		margin: 0 auto;
+	}
+	
 }
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen 
 and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-/* Styles */
+and (max-device-width : 1223px) {
+	
+	body{
+		background: #FFF;
+	    font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
+	    margin: 0 auto;
+	    padding: 0;
+		width: 50%;
+	}
+
+	#page {
+		width: ;
+		margin: 0 auto;
+	}
+	
+
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+
+	body{
+		background: #FFF;
+	    font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
+	    margin: 0 auto;
+	    padding: 0;
+		width: 50%;
+	}
+
+	#page {
+		width: 32.5801366263794;
+		margin: 0 auto;
+	}
 }
 
-/* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1224px) {
-/* Styles */
-}

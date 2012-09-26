@@ -1,8 +1,5 @@
 /*
-	Website:  		Job Search Site - PHP Class Project
-	Developer:		
-	Created On:		Sept 6 2012
-	Revised On:
+	Website:  		Executax		
 	CSS Version: 	3
 	
 	Purpose:
@@ -56,115 +53,148 @@ table {
 
 /* ------------------ End Reset ------------------ */
 
-body{
-	background: #FFF;
-    font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
-    margin: 0 auto;
-    padding: 0;
-    width: 960px;
-}
 
-container {
-    width: 450px;
-    margin: 0 auto;
-    padding: 15px;
-    background: white;
-    border: 2px solid navy;
-}
+@media only screen 
+and (min-width : 1224px) {
 	
-h1 {
-    color: black;
-    font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
-    font-weight: 700;
-	font-style: italic;
-	font-size: 3em;
-	margin-bottom: 0;
-}
-
-h2 {
-	border-bottom: 4px solid #35478C;
-    color: #35478C;
-    font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
-    font-weight: 400;
-    font-size: 1em;
-	font-style: italic;
-	padding-bottom: 5px;
-	width:960px;
-}
-
-h3{
-	clear: left;
-	color: #35478C;
-	margin-top: 20px;
-	padding-bottom: 10px;
-}
-
-h4{
-	clear:left;
-}
-
-nav ul li{
-	background-color: #ADD5F7;
-	list-style: none;
-	text-decoration:none;
-	font-size: 125%;
-	font-weight: 400;
-	padding-right: 50px;
-	padding-bottom: 10px;
-	text-align: right;
-}
-
-nav ul li a{
-	color: #fff;
-	text-decoration:none;
-}
-
-fieldset{
-	clear: left;
-}
-
-legend{
-	font-weight: 700;
-	padding-top: 50px;
-}
-
-label {
-    width: 14em;
-    float: left;
-}
-
-select{
-	display: block;
-}
-
-
-input {
-	display: block;
-    width: 150px;
-}
-
-textarea{
-	resize: none;
-	margin: 0px;
-	margin-top: 2px;
-}
-
-footer{
-	clear:left;
-	margin-top: 700px;
-	border-top: 4px solid #35478C;
-	padding: 14px 0 155px;
-}
-
-.error{
-	border-color: #F00;
-	color: #F00;		
-}
+	body{
+		background: #FFF;
+	    font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
+	    margin: 0 auto;
+	    padding: 0;
+		width: 100%;
+	}
 	
-.hidden{
-	display: none;
+	#page {
+		width: 50.44666316342617%;
+		margin: 0 auto;
+	}
+	
+	
+	container {
+	    width: 450px;
+	    margin: 0 auto;
+	    padding: 15px;
+	    background: white;
+	    border: 2px solid navy;
+	}
+		
+	h1 {
+	    color: black;
+	    font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
+	    font-weight: 700;
+		font-style: italic;
+		font-size: 3em;
+		margin-bottom: 0;
+	}
+	
+	h2 {
+		border-bottom: 4px solid #35478C;
+		width: 50.44666316342617%;
+		margin: 0 auto;
+	    color: #35478C;
+	    font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
+	    font-weight: 400;
+	    font-size: 1em;
+		font-style: italic;
+		padding-bottom: 5px;
+		width:960px;
+	}
+	
+	h3{
+		clear: left;
+		color: #35478C;
+		margin-top: 20px;
+		padding-bottom: 10px;
+	}
+	
+	h4{
+		clear:left;
+	}
+	
+	nav ul li{
+		background-color: #ADD5F7;
+		list-style: none;
+		text-decoration:none;
+		font-size: 125%;
+		font-weight: 400;
+		padding-right: 50px;
+		padding-bottom: 10px;
+		text-align: right;
+	}
+	
+	nav ul li a{
+		color: #fff;
+		text-decoration:none;
+	}
+	
+	fieldset{
+		clear: left;
+	}
+	
+	legend{
+		font-weight: 700;
+		padding-top: 50px;
+	}
+	
+	label {
+	    width: 14em;
+	    float: left;
+	}
+	
+	select{
+		display: block;
+	}
+	
+	
+	input {
+		display: block;
+	    width: 150px;
+	}
+	
+	textarea{
+		resize: none;
+		margin: 0px;
+		margin-top: 2px;
+	}
+	
+	footer{
+		clear:left;
+		border-top: 4px solid #35478C;
+		padding: 14px 0 155px;
+		width: 50.44666316342617%;
+		margin: 0 auto;
+	}
+	
+	.error{
+		border-color: #F00;
+		color: #F00;		
+	}
+		
+	.hidden{
+		display: none;
+	}
+	
+	.show{
+		display: block;
+	}
 }
 
-.show{
-	display: block;
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
 }

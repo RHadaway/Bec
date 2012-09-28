@@ -64,7 +64,12 @@ elseif($action == 'displayrss'){
 elseif($action == 'contact'){
 	include 'views/contact.php';
 }
-
+elseif($action == 'aboutus'){
+	include 'views/aboutus.php';
+}
+elseif($action == 'home'){
+	include 'views/home.php';
+}
 else{
 	include 'views/home.php';
 }

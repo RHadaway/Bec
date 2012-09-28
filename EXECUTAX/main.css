@@ -53,7 +53,13 @@ table {
 
 /* ------------------ End Reset ------------------ */
 
-	
+		body{
+		background: #FFF;
+	    font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
+	    margin: 0 auto;
+	    padding: 0;
+		width: 100%;
+	}
 	container {
 	    width: 450px;
 	    margin: 0 auto;
@@ -73,15 +79,13 @@ table {
 	
 	h2 {
 		border-bottom: 4px solid #35478C;
-		width: 50.44666316342617%;
-		margin: 0 auto;
 	    color: #35478C;
 	    font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
 	    font-weight: 400;
 	    font-size: 1em;
 		font-style: italic;
 		padding-bottom: 5px;
-		width:960px;
+	
 	}
 	
 	h3{
@@ -145,8 +149,6 @@ table {
 		clear:left;
 		border-top: 4px solid #35478C;
 		padding: 14px 0 155px;
-		width: 50.44666316342617%;
-		margin: 0 auto;
 	}
 	
 	.error{
@@ -163,8 +165,8 @@ table {
 	}
 
 @media only screen 
-and (min-width : 1224px) {
-	
+and (min-width : 1024px) {
+
 	#page {
 		width: 50.44666316342617%;
 		margin: 0 auto;
@@ -174,39 +176,40 @@ and (min-width : 1224px) {
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1223px) {
-	
-	body{
-		background: #FFF;
-	    font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
-	    margin: 0 auto;
-	    padding: 0;
-		width: 50%;
-	}
+and (min-width : 768px) 
+and (max-width : 1023px) {
 
 	#page {
-		width: ;
+		width: 70%;
 		margin: 0 auto;
 	}
 	
 
 }
 @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-
-	body{
-		background: #FFF;
-	    font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
-	    margin: 0 auto;
-	    padding: 0;
-		width: 50%;
-	}
+and (min-width : 400px) 
+and (max-width : 767px) {
 
 	#page {
-		width: 32.5801366263794;
+		width: 80%;
 		margin: 0 auto;
 	}
+
 }
 
+@media only screen 
+and (max-width : 399px) {
+
+
+
+	h1{
+		font-size: 2em;
+	}
+	
+	label {
+	  
+	    display: block;
+	    
+	}
+
+}

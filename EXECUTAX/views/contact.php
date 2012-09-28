@@ -41,9 +41,10 @@
 
 	
 		</head>
-		<?php 	include 'views/header.php';?>
+		
 	<body>
-		<div id="page_wrap">
+		<div id="page">
+		<?php 	include 'views/header.php';?>
 			<div id="container">
 				<form action='.'  method='post' onsubmit='return validateForm()'>
 				<fieldset>
@@ -70,20 +71,12 @@
 				</fieldset>
 				
 				</form>
-				
 			
-			
-				
-				
-				<div id="sidebar">
-				</div><!--sidebar -->
 				
 				<div id="main">
 				</div><!--main -->
 
-				<footer>
-					<p>Executax &copy;2012. All Rights Reserved.</p>
-				</footer><!--footer -->
+				<?php 	include 'views/footer.php';?>
 			
    			</div><!--container -->
 		</div><!--page_wrap -->
@@ -91,6 +84,6 @@
    </body>
 
 </html>
-<?php 	include 'views/footer.php';?>
+
 
 

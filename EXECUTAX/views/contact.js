@@ -15,6 +15,7 @@ function validateForm(){
 		return true;
 	}
 	else{
+		
 		return false;
 	}
 }
@@ -26,6 +27,7 @@ function validateField() {
 		} // End if
 	else {
 		$('name').className = "error";
+		
 		return false;
 		} // End else
 	}

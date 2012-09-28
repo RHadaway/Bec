@@ -43,24 +43,24 @@
 	
 	  
 	</head>
-	<div id="page">
+	
 		<body>
-		
+		<div id="page">
 				<div id="container">
 				
 				<?php 	include 'views/header.php';?>
 					
-					<div id="sidebar">
-					</div><!--sidebar -->
-					
+				
 					<div id="main">
 					</div><!--main -->
 				
+				<?php 	include 'views/footer.php';?>
+				
 				</div><!--container -->
 			
-		
+	</div>	
 		   </body>
-	</div>
+	
 </html>   
-<?php 	include 'views/footer.php';?>
+
 

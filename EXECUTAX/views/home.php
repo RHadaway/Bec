@@ -52,6 +52,7 @@
 					
 				
 					<div id="main">
+					<p>Executax was established in 2000. We focus on Canadian personal income tax needs for individuals, families, small business, and estates.</p>
 					</div><!--main -->
 				
 				<?php 	include 'views/footer.php';?>

@@ -27,7 +27,7 @@ function validateField() {
 		} // End if
 	else {
 		$('name').className = "error";
-		
+		$('nameerror').innerHTML="* Please enter name.";
 		return false;
 		} // End else
 	}
@@ -50,4 +50,6 @@ function testEmail(email) {
 	
 	return emailRegEx.test(email);
 	}//end testEmail
-	
+
+
+

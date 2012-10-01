@@ -44,7 +44,7 @@
 	</head>
 
 	<body>
-		<div id="page_wrap">
+		<div id="page">
 			<div id="container">
 			
 		<?php 	include 'views/header.php';?>
@@ -61,7 +61,7 @@
 				<?php 	include 'views/footer.php';?>
 				
 			</div><!--container -->
-		</div><!--page_wrap -->
+		</div><!--page-->
 
    </body>
 

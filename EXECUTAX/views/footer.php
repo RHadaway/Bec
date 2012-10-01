@@ -5,10 +5,10 @@
 			<p>Executax &copy;2012. All Rights Reserved.</p>
 		</div>
 		
-		<div id=social>
+		<!--<div id=social>
 			<p><a id="RSS" target="_blank" href="?action=displayrss"> <img width="32" height="32"
 				title="Subscribe to our RSS" alt="RSS" src="./images/rss-32.png"></a></p>
-		</div>
+		</div>-->
 	</footer>
 	<!--footer -->
 </body>

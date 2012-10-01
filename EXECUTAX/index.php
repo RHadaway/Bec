@@ -89,6 +89,9 @@ elseif($action == 'home'){
 elseif($action == 'rssform'){
 	include 'views/rssform.php';
 }
+elseif($action == 'posts'){
+	include 'views/posts.php';
+}
 else{
 	include 'views/home.php';
 }

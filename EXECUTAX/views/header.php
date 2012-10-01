@@ -7,6 +7,7 @@
 					<li> <a href="?action=home" id="home">Home</a></li>
 					<li> <a href="?action=aboutus" id="aboutUs">About Us</a></li>
 					<li> <a href="?action=contact" id="contact" >Contact</a></li>
+					<li> <a href="?action=posts" id="posts" >Posts</a></li>
 				</ul>
 			</nav>
 	</header><!--header -->

@@ -50,7 +50,7 @@
 				<fieldset>
 					<legend>RSS Feed:</legend><br /> 
 					<label>Title:</label><input type='text' id='title' for='title' name='title' />
-					<label>Description:</label><textarea rows="5" cols="50" name="message" wrap="physical"></textarea>
+					<label>Description:</label><textarea rows="5" cols="50" name="description" wrap="physical"></textarea>
 					<label>Link:</label><input type='text' id='link' for='link'name='link' />
 					<label>Publish Date:</label><input type='text' id='pubdate' for='pubdate' name='pubdate' />
 					<label>Your Name:</label><input type='text' id='name' for='name' name='name' />

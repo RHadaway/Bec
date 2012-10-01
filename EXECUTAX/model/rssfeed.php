@@ -24,7 +24,7 @@
    		$output .= "<link>$oitem->link</link>";
    		$output .= "<pubDate>$oitem->pubdate</pubDate>";
    		$output .= "<author>$oitem->author</author>";
-   		$output .= '</item> ';
+   		$output .= "</item>\n";
    	}
    	
  

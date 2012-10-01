@@ -40,13 +40,14 @@
 				<caption>Important Information</caption>
 				<thead>
 					<tr>
-						<th id="title" scope="col">Title</th>
-						<th id="description" scope="col">Description</th>
-						<th id="link" scope="col">Link</th>
-						<th id="pubdate" scope="col">Published Date</th>
-						<th id="author" scope="col">Author</th>
+						<th id="title" scope="row">Title</th>
+						<th id="description" scope="row">Description</th>
+						<th id="link" scope="row">Link</th>
+						<th id="pubdate" scope="row">Published Date</th>
+						<th id="author" scope="row">Author</th>
 					</tr>
 				</thead>
+				
 				<tbody>
 				 <?php $oitem = new rss();
    						foreach($oitem->find ('1 order by pubdate DESC limit 0,30') as $oitem) : ?>
@@ -58,6 +59,8 @@
 						<td headers="author"><?php echo  $oitem->author; ?></td>
 									
 					</tr>
+					
+	
 				<?php endforeach; ?>						
 				</tbody>
 								
@@ -69,6 +72,20 @@
 			
 	</div>	
 		   </body>
-	
+					<h4>Vertical headers:</h4>
+<table border="1">
+<tr>
+  <th>First Name:</th>
+  <td>Bill Gates</td>
+</tr>
+<tr>
+  <th>Telephone:</th>
+  <td>555 77 854</td>
+</tr>
+<tr>
+  <th>Telephone:</th>
+  <td>555 77 855</td>
+</tr>
+</table>
 </html>   
 

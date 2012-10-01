@@ -60,7 +60,7 @@
 					</select><br/>
 				
 					<label>Name:</label><input type='text' id='name' for='name' name='name'/><span id='nameerror'></span><br />
-					<label>Your email:</label><input type='text' id='cemail' for='cemail' name='cemail'/><br />
+					<label>Your email:</label><input type='text' id='cemail' for='cemail' name='cemail'/><span id='emailerror'></span><br />
 					<label>Day Phone Number:</label><input type='text' id='dphone' for='dphone' name='dphone'/><br />
 					<label>Evening Phone Number:</label><input type='text' id='nphone' for='nphone' name='nphone'/><br />
 					<label>Subject:</label><input type='text' id='subject' for='subject' name='subject'/><br />

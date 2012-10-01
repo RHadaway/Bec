@@ -40,6 +40,7 @@ function validateEmail() {
 		} // End if
 	else {
 		field.className = "error";
+		$('emailerror').innerHTML="* Please enter correct email.";
 		return false;
 
 		} // End else

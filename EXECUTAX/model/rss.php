@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `rss` (
   `title` varchar(25) NOT NULL,
   `description` varchar(250) NOT NULL,
   `link` varchar(50) NOT NULL,
-  'pubDate' date NOT NULL,
+  'pubdate' date NOT NULL,
   'author' varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

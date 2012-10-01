@@ -6,21 +6,28 @@
     //CONSTRUCT RSS FEED HEADERS
     $output = '<rss version="2.0">';
     $output .= '<channel>';
-    $output .= '<title>Your RSS Feed Name or Website Name</title>';
-    $output .= '<description>A description of your feed or site.</description>';
-    $output .= '<link>http://www.yoursite.com/</link>';
+    $output .= '<title>Executax</title>';
+    $output .= '<description>New income tax information.</description>';
+    $output .= '<link>http://www.executax.ca/</link>';
     $output .= '<pubDate>Date Published</pubDate>';
-    $output .= '<author>Name</author>';
+    $output .= '<author>Brian</author>';
 
+    
  
     //BODY OF RSS FEED
-   $output .= '<item>';
-        $output .= '<title>Item Title</title>';
-        $output .= '<description>Item Description</description>';
-        $output .= '<link>Link to Item</link>';
-        $output .= '<pubDate>Date Published</pubDate>';
-        $output .= '<author>Name</author>';
-   $output .= '</item> ';
+    
+   $oitem = new rss();
+   	foreach($oitem->find ('1 order by pubdate DESC limit 0,30')as $oitem){
+   		$output .= '<item>';
+   		$output .= "<title>$oitem->title </title>";
+   		$output .= "<description>$oitem->description</description>";
+   		$output .= "<link>$oitem->link</link>";
+   		$output .= "<pubDate>$oitem->pubdate</pubDate>";
+   		$output .= "<author>$oitem->author</author>";
+   		$output .= '</item> ';
+   	}
+   	
+ 
  
     //CLOSE RSS FEED
    $output .= '</channel>';

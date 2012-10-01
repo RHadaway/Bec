@@ -73,8 +73,12 @@
 				</form>
 			
 				
-				<div id="main">
+				<div id="advice">
+				<img src="./images/advice.jpg" width="282" height = "400" alt="Tax Advice" />
 				</div><!--main -->
+				<div id=photographer>
+				<p>Image courtesy of Stuart Miles / <a href="http://www.freedigitalphotos.net" target="_blank">FreeDigitalPhotos.net</a></p>
+				</div>
 
 				<?php 	include 'views/footer.php';?>
 			

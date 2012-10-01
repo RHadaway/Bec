@@ -49,11 +49,16 @@
 				<div id="container">
 				
 				<?php 	include 'views/header.php';?>
+					<div id="mainpic">	
+						<img src="./images/chaulkboard.jpg" width="300" height = "200" alt="Income Tax" />
+					</div>
 					
-				
 					<div id="main">
-					<p>Executax was established in 2000. We focus on Canadian personal income tax needs for individuals, families, small business, and estates.</p>
+						<p>Executax was established in 2000. We focus on Canadian personal income tax needs for individuals, families, small business, and estates.</p>
 					</div><!--main -->
+					<div id=photographer>
+						<p>Image courtesy of Robert Cochrane / <a href="http://www.freedigitalphotos.net" target="_blank">FreeDigitalPhotos.net</a></p>
+					</div>
 				
 				<?php 	include 'views/footer.php';?>
 				

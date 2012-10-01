@@ -12,7 +12,7 @@ if($_SERVER['SERVER_PORT'] == 8080){
 
 ADOdb_Active_Record::SetDatabaseAdapter($db);
 class email extends ADOdb_Active_Record{}
-
+class rss extends ADOdb_Active_Record{}
 $action = (array_key_exists('action', $_POST)?$_POST['action']:'');
 $action = (array_key_exists('action', $_GET)?$_GET['action']: $action);
 
@@ -58,6 +58,22 @@ if($action == 'Send'){
 	}
 
 }
+elseif($action == 'Post'){
+	//print_r($_POST);
+	
+		$oRss = new rss;
+		$oRss->title = $_POST['title'];
+		$oRss->description = $_POST['description'];
+		$oRss->link = $_POST['link'];
+		$oRss->pubdate = $_POST['pubdate'];
+		$oRss->author = $_POST['name'];
+		if(!$oRss->save()){
+			echo $oRss->ErrorMsg();
+		}
+	
+
+
+}
 elseif($action == 'displayrss'){
 	include 'model/rssfeed.php';
 }
@@ -69,6 +85,9 @@ elseif($action == 'aboutus'){
 }
 elseif($action == 'home'){
 	include 'views/home.php';
+}
+elseif($action == 'rssform'){
+	include 'views/rssform.php';
 }
 else{
 	include 'views/home.php';

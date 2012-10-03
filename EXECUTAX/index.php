@@ -30,8 +30,9 @@ if($action == 'Send'){
 			//'Disposition-Notification-To'.$_POST['email']."\r\n" - to get notification
 	'X-Mailer: PHP/' . phpversion();
 
+	$subject = $_POST['subject'];
 	// Send
-	if(mail($_POST['contact'], '$subject', $message))
+	if(mail($_POST['contact'], $subject, $message))
 
 	{
 
@@ -40,7 +41,7 @@ if($action == 'Send'){
 		$oEmail->cemail = $_POST['cemail'];
 		$oEmail->dphone = $_POST['dphone'];
 		$oEmail->nphone = $_POST['nphone'];
-		$oEmail->subject = $_POST['subject'];
+		$oEmail->subject = $subject;
 		$oEmail->message = $_POST['message'];
 		$oDate = new DateTime();
 		$oEmail->date = $oDate->format("Y-m-d");
@@ -60,17 +61,24 @@ if($action == 'Send'){
 }
 elseif($action == 'Post'){
 	//print_r($_POST);
-	
-		$oRss = new rss;
-		$oRss->title = $_POST['title'];
-		$oRss->description = $_POST['description'];
-		$oRss->link = $_POST['link'];
+
+	$oRss = new rss;
+	$oRss->title = $_POST['title'];
+	$oRss->description = $_POST['description'];
+	$oRss->link = $_POST['link'];
+	if (empty($_POST['pubdate'])){
+		$oDate = new DateTime();
+			
+		$oRss->pubdate = $oDate->format("Y-m-d");
+	}
+	else{
 		$oRss->pubdate = $_POST['pubdate'];
-		$oRss->author = $_POST['name'];
-		if(!$oRss->save()){
-			echo $oRss->ErrorMsg();
-		}
-	
+	}
+	$oRss->author = $_POST['name'];
+	if(!$oRss->save()){
+		echo $oRss->ErrorMsg();
+	}
+
 
 
 }

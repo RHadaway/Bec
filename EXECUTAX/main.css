@@ -10,12 +10,8 @@
 */
 
 /* ------------------ Reset ------------------ */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
-pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, 
-samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article,
-aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
-output, ruby, section, summary, time, mark, audio, video {
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+	{
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -25,7 +21,8 @@ output, ruby, section, summary, time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section
+	{
 	display: block;
 }
 
@@ -33,15 +30,15 @@ body {
 	line-height: 1.25;
 }
 
-ol, ul {
+ol,ul {
 	list-style: none;
 }
 
-blockquote, q {
+blockquote,q {
 	quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,blockquote:after,q:before,q:after {
 	content: '';
 	content: none;
 }
@@ -52,224 +49,232 @@ table {
 }
 
 /* ------------------ End Reset ------------------ */
+body {
+	background: #FFF;
+	font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
 
-		body{
-		background: #FFF;
-	    font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
-	    margin: 0 auto;
-	    padding: 0;
-		width: 100%;
+container {
+	background: white;
+	border: 2px solid navy;
+	margin: 0 auto;
+	padding: 15px;
+	width: 450px;
+}
+
+form {
+	float: left;
+	width: 675px;
+}
+
+h1 {
+	color: black;
+	font-family: 'Bookman Old Style', Bookman, 'URW Bookman L',
+		'Palatino Linotype', serif;
+	font-style: italic;
+	font-size: 2em;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+
+h2 {
+	border-bottom: 4px solid #35478C;
+	color: #35478C;
+	font-family: 'Bookman Old Style', Bookman, 'URW Bookman L',
+		'Palatino Linotype', serif;
+	font-size: 1em;
+	font-style: italic;
+	font-weight: 400;
+	padding-bottom: 5px;
+}
+
+h3 {
+	clear: left;
+	color: #35478C;
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
+
+h4 {
+	clear: left;
+	font-size: 125%;
+	font-weight: 700;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+h5 {
+	font-weight: 700;
+	padding-top: 5px;
+}
+
+nav ul li {
+	background-color: #ADD5F7;
+	list-style: none;
+	font-size: 125%;
+	font-weight: 400;
+	padding-bottom: 10px;
+	padding-right: 50px;
+	text-decoration: none;
+	text-align: right;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+fieldset {
+	clear: left;
+}
+
+legend {
+	font-weight: 700;
+	padding-top: 50px;
+}
+
+label {
+	display: block;
+	width: 14em;
+}
+
+select {
+	display: block;
+}
+
+input {
+	display: block;
+	width: 150px;
+}
+
+textarea {
+	margin: 0px;
+	margin-top: 2px;
+	resize: none;
+	width: 275px;
+}
+
+footer {
+	border-top: 4px solid #35478C;
+	clear: left;
+	font-size: .75em;
+	margin-top: 20px;
+}
+
+#main {
+	padding-top: 20px;
+}
+
+#mainpic {
+	float: left;
+	padding: 15px;
+}
+
+#pic {
+	font-size: .5em;
+	width: 100%;
+}
+
+pic.advice {
+	width: 100%;
+}
+
+#sign {
+	padding: 10px;
+	text-align: center;
+}
+
+#photographer {
+	font-size: .5em;
+	text-align: right;
+}
+
+#copy {
+	float: left;
+}
+
+.error {
+	border-color: #F00;
+	color: #F00;
+}
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.description {
+	font-family: 'Arial Narrow', 'Nimbus Sans L', sans-serif;
+}
+
+
+#nameerror {
+	color: #F00;
+	font-size: .75em;
+	padding-left: 225px;
+}
+
+#emailerror {
+	color: #F00;
+	font-size: .75em;
+	padding-left: 225px;
+}
+
+#pic {
+	display: none;
+}
+
+pic.advice {
+	display: none;
+}
+
+@media only screen and (min-width : 400px) {
+	#page {
+		margin: 0 auto;
+		width: 80%;
 	}
-	
-	container {
-	    width: 450px;
-	    margin: 0 auto;
-	    padding: 15px;
-	    background: white;
-	    border: 2px solid navy;
-	   
-	}
-	
-	form{
-		width:675px;
-		 float: left;
-	}
-		
 	h1 {
-	    color: black;
-	    font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
-	    font-weight: 700;
-		font-style: italic;
 		font-size: 3em;
-		margin-bottom: 0;
 	}
-	
-	h2 {
-		border-bottom: 4px solid #35478C;
-	    color: #35478C;
-	    font-family:'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype',serif;
-	    font-weight: 400;
-	    font-size: 1em;
-		font-style: italic;
-		padding-bottom: 5px;
-	
-	}
-	
-	h3{
-		clear: left;
-		color: #35478C;
-		margin-top: 20px;
-		padding-bottom: 10px;
-	}
-	
-	h4{
-		clear:left;
-		font-size: 125%;
-		font-weight: 700;
-		padding-bottom: 10px;
-		padding-top: 10px;
-	}
-	
-	h5{
-		font-weight:700;
-		padding-top: 5px;
-	}
-	
-	nav ul li{
-		background-color: #ADD5F7;
-		list-style: none;
-		text-decoration:none;
-		font-size: 125%;
-		font-weight: 400;
-		padding-right: 50px;
-		padding-bottom: 10px;
-		text-align: right;
-	}
-	
-	nav ul li a{
-		color: #fff;
-		text-decoration:none;
-	}
-	
-	fieldset{
-		clear: left;
-	}
-	
-	legend{
-		font-weight: 700;
-		padding-top: 50px;
-	}
-	
 	label {
-	    width: 14em;
-	    float: left;
-	}
-	
-	select{
-		display: block;
-	}
-	
-	
-	input {
-		display: block;
-	    width: 150px;
-	}
-	
-	textarea{
-		resize: none;
-		margin: 0px;
-		margin-top: 2px;
-	}
-	
-	footer{
-		clear:left;
-		border-top: 4px solid #35478C;
-		font-size: .75em;
-		padding: 14px 0 155px;
-	}
-	
-	#main{
-		padding-top:20px;
-	}
-	#mainpic{
-		float:left;
-		padding: 15px;
-	}
-	
-	#advice{
-		clear:float;
-	}
-	
-	#sign{
-		text-align: center;
-		padding: 10px;
-	}
-	
-	#photographer{
-		font-size: .5em;
-		text-align: right;
-	}
-	
-	#copy{
 		float: left;
 	}
-	#social{
-		text-align: right;
-		text-decoration: none;
+	textarea {
+		width: 180px;
 	}
-	
-	
-	.error{
-		border-color: #F00;
-		color: #F00;		
+}
+
+@media only screen and (min-width : 600px) {
+	textarea {
+		width: 280px;
 	}
-		
-	.hidden{
-		display: none;
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width : 768px) {
+	#page {
+		margin: 0 auto;
+		width: 70%;
 	}
-	
-	.show{
+	textarea {
+		width: 350px;
+	}
+}
+
+@media only screen and (min-width : 1124px) {
+	#page {
+		margin: 0 auto;
+		width: 50.44666316342617%;
+	}
+	#pic {
 		display: block;
 	}
-	
-	#nameerror{
-		font-size: .75em;
-		color:#F00;
-		padding-left: 225px;
+	pic.advice {
+		display: block;
 	}
-	
-	#emailerror{
-		font-size: .75em;
-		color:#F00;
-		padding-left: 225px;
-	}
-
-@media only screen 
-and (min-width : 1024px) {
-
-	#page {
-		width: 50.44666316342617%;
-		margin: 0 auto;
-	}
-	
-}
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-width : 768px) 
-and (max-width : 1023px) {
-
-	#page {
-		width: 70%;
-		margin: 0 auto;
-	}
-	
-
-}
-@media only screen 
-and (min-width : 400px) 
-and (max-width : 767px) {
-
-	#page {
-		width: 80%;
-		margin: 0 auto;
-	}
-
-}
-
-@media only screen 
-and (max-width : 399px) {
-
-
-
-	h1{
-		font-size: 2em;
-	}
-	
-	label {
-	  
-	    display: block;
-	    
-	}
-
 }

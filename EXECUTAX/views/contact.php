@@ -56,7 +56,6 @@
 						<option value='brian@exectax.ca'>Brian Bentley</option>
 						<option value='jim@executax.ca'>Jim Reeves</option>
 						<option value='tineke@executax.ca'>Tineke Vos</option>
-						<option value='rebeccahadaway@gmail.com'>me</option>
 					</select><br/>
 				
 					<label>Name:</label><input type='text' id='name' for='name' name='name'/><span id='nameerror'></span><br />
@@ -65,7 +64,7 @@
 					<label>Evening Phone Number:</label><input type='text' id='nphone' for='nphone' name='nphone'/><br />
 					<label>Subject:</label><input type='text' id='subject' for='subject' name='subject'/><br />
 					<label>Message:</label>
-						<textarea rows="5" cols="50" name="message" wrap="physical"></textarea>
+						<textarea rows="5"  name="message" wrap="physical"></textarea>
 				
 					<input type='submit' name='action' value='Send'/> 
 				</fieldset>
@@ -73,12 +72,11 @@
 				</form>
 			
 				
-				<div id="advice">
-				<img src="./images/advice.jpg" width="282" height = "400" alt="Tax Advice" />
-				</div><!--main -->
-				<div id=photographer>
-				<p>Image courtesy of Stuart Miles / <a href="http://www.freedigitalphotos.net" target="_blank">FreeDigitalPhotos.net</a></p>
+				<div id=pic>
+					<img src="./images/advice.jpg" id="advice" alt="Tax Advice" />
+					<p>Image courtesy of Stuart Miles / <a href="http://www.freedigitalphotos.net" target="_blank">FreeDigitalPhotos.net</a></p>
 				</div>
+				
 
 				<?php 	include 'views/footer.php';?>
 			

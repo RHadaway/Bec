@@ -46,7 +46,13 @@
 		<div id="page">
 		<?php 	include 'views/header.php';?>
 			<div id="container">
-				<form action='.'  method='post' onsubmit='return validateForm()'>
+				<div id=pic>
+					<img src="./images/advice.jpg" id="advice" alt="Tax Advice" />
+					<p>Image courtesy of Stuart Miles / <a href="http://www.freedigitalphotos.net" target="_blank">FreeDigitalPhotos.net</a></p>
+				</div>
+			
+			
+			<form action='.'  method='post' onsubmit='return validateForm()'>
 				<fieldset>
 					<legend>Contact Form:</legend><br />
 					<select name="contact">
@@ -70,12 +76,9 @@
 				</fieldset>
 				
 				</form>
-			
+		
 				
-				<div id=pic>
-					<img src="./images/advice.jpg" id="advice" alt="Tax Advice" />
-					<p>Image courtesy of Stuart Miles / <a href="http://www.freedigitalphotos.net" target="_blank">FreeDigitalPhotos.net</a></p>
-				</div>
+				
 				
 
 				<?php 	include 'views/footer.php';?>

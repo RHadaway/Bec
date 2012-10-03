@@ -65,10 +65,6 @@ container {
 	width: 450px;
 }
 
-form {
-	float: left;
-	width: 675px;
-}
 
 h1 {
 	color: black;
@@ -230,9 +226,7 @@ pic.advice {
 	display: none;
 }
 
-pic.advice {
-	display: none;
-}
+
 
 @media only screen and (min-width : 400px) {
 	#page {
@@ -266,15 +260,18 @@ pic.advice {
 	}
 }
 
-@media only screen and (min-width : 1124px) {
+@media only screen and (min-width : 1750px) {
 	#page {
 		margin: 0 auto;
 		width: 50.44666316342617%;
 	}
 	#pic {
 		display: block;
+		
+		position:absolute; top:auto; right:25%;
+		width:282px;
+		
+		
 	}
-	pic.advice {
-		display: block;
-	}
+	
 }

@@ -36,10 +36,11 @@
    <!-- CSS link-->
 	<link rel="stylesheet" type="text/css" href="./main.css" />
 	
+		<!--[if lt IE 9]> <link href="./ie8andbelow.css" rel="stylesheet" type="text/css"> <![endif]-->
 	
-	<!--[if lt IE 9]> 
+	<!--[if lt IE 9]> <![endif]-->
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+	
 	
 	  
 	</head>

@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,28 +6,28 @@
 
 <title>Posts</title>
 
-<meta name="Executax"
-	content="Executax - Professional Income Tax Preparation" />
-<!--no more than 20 -->
-<meta name="keywords" content="" />
-
-<!--Favicon links
+	<meta name="Executax" content="Executax - Professional Income Tax Preparation"/>
+	<!--no more than 20 -->
+	<meta name="keywords" content=""/>
+	 
+	<!--Favicon links
 	<link rel="shortcut icon" href="favicon.ico"/>
 	<link ref="apple-touch-icon" href="apple-touch-icon.png"/>
 	-->
-
-<!--JavaScript link
+	
+	<!--JavaScript link
 	<script src="./js/filename.js"</script>
    -->
-
-<!-- CSS link-->
-<link rel="stylesheet" type="text/css" href="./main.css" />
-
-
-<!--[if lt IE 9]> 
+   
+   <!-- CSS link-->
+	<link rel="stylesheet" type="text/css" href="./main.css" />
+	
+	<!--[if lt IE 9]> <link href="./ie8andbelow.css" rel="stylesheet" type="text/css"> <![endif]-->
+	<!--[if lt IE 9]> 
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
+	
 
 </head>
 

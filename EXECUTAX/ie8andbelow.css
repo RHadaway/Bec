@@ -1,0 +1,20 @@
+label {
+	float: left;
+}
+
+textarea {
+	width: 350px;
+}
+
+#page {
+	margin: 0 auto;
+	width: 50.44666316342617%;
+}
+
+#pic {
+	display: block;
+	position: absolute;
+	top: auto;
+	right: 25%;
+	width: 282px;
+}

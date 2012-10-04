@@ -1,12 +1,12 @@
 <?php 
-require_once('../adodb5/adodb.inc.php');
-require_once('../adodb5/adodb-active-record.inc.php');
+require_once('./adodb5/adodb.inc.php');
+require_once('./adodb5/adodb-active-record.inc.php');
 
 $db = NewADOConnection('mysql');
 if($_SERVER['SERVER_PORT'] == 8080){
 	$db->Connect("localhost", "root", "", "executax");
 }else{
-	$db->Connect('rhadaway.netfirmsmysql.com', 'rhadaway', 'executax', "executax");
+	$db->Connect('executax.db.9931305.hostedresource.com', 'executax', 'Taxesare#1', "executax");
 }
 
 

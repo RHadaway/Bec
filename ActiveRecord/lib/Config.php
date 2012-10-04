@@ -98,7 +98,7 @@ class Config extends Singleton
 	 * $cfg = ActiveRecord\Config::instance();
 	 * $cfg->set_model_directory('/path/to/your/model_directory');
 	 * $cfg->set_connections(array('development' =>
-  	 *   'mysql://username:password@localhost/database_name'));
+	 *   'mysql://username:password@localhost/database_name'));
 	 * </code>
 	 *
 	 * @param Closure $initializer A closure
@@ -165,7 +165,7 @@ class Config extends Singleton
 	public function get_default_connection_string()
 	{
 		return array_key_exists($this->default_connection,$this->connections) ?
-			$this->connections[$this->default_connection] : null;
+		$this->connections[$this->default_connection] : null;
 	}
 
 	/**

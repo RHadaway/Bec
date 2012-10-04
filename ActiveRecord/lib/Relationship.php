@@ -88,7 +88,7 @@ abstract class AbstractRelationship implements InterfaceRelationship
 		if (isset($this->options['class']))
 			$this->set_class_name($this->options['class']);
 		elseif (isset($this->options['class_name']))
-			$this->set_class_name($this->options['class_name']);
+		$this->set_class_name($this->options['class_name']);
 
 		$this->attribute_name = strtolower(Inflector::instance()->variablize($this->attribute_name));
 
@@ -338,7 +338,7 @@ abstract class AbstractRelationship implements InterfaceRelationship
 			$join_table = $from_table;
 			$join_table_name = $from_table->get_fully_qualified_table_name();
 			$from_table_name = Table::load($this->class_name)->get_fully_qualified_table_name();
- 		}
+		}
 		else
 		{
 			$join_table = Table::load($this->class_name);
@@ -510,7 +510,7 @@ class HasMany extends AbstractRelationship
 				$fk = $this->foreign_key;
 
 				$this->set_keys($this->get_table()->class->getName(), true);
-				
+
 				$class = $this->class_name;
 				$relation = $class::table()->get_relationship($this->through);
 				$through_table = $relation->get_table();
@@ -595,11 +595,11 @@ class HasAndBelongsToMany extends AbstractRelationship
 	{
 		/* options =>
 		 *   join_table - name of the join table if not in lexical order
-		 *   foreign_key -
-		 *   association_foreign_key - default is {assoc_class}_id
-		 *   uniq - if true duplicate assoc objects will be ignored
-		 *   validate
-		 */
+		*   foreign_key -
+		*   association_foreign_key - default is {assoc_class}_id
+		*   uniq - if true duplicate assoc objects will be ignored
+		*   validate
+		*/
 	}
 
 	public function load(Model $model)

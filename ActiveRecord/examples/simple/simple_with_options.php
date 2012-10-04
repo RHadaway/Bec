@@ -17,15 +17,15 @@ class Book extends ActiveRecord\Model
 }
 
 $connections = array(
-	'development' => 'mysql://invalid',
-	'production' => 'mysql://test:test@127.0.0.1/test'
+		'development' => 'mysql://invalid',
+		'production' => 'mysql://test:test@127.0.0.1/test'
 );
 
 // initialize ActiveRecord
 ActiveRecord\Config::initialize(function($cfg) use ($connections)
 {
-    $cfg->set_model_directory('.');
-    $cfg->set_connections($connections);
+	$cfg->set_model_directory('.');
+	$cfg->set_connections($connections);
 });
 
 print_r(Book::first()->attributes());

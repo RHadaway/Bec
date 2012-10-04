@@ -52,10 +52,10 @@ abstract class Connection
 	 * @var array
 	 */
 	static $PDO_OPTIONS = array(
-		PDO::ATTR_CASE => PDO::CASE_LOWER,
-		PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-		PDO::ATTR_ORACLE_NULLS => PDO::NULL_NATURAL,
-		PDO::ATTR_STRINGIFY_FETCHES => false);
+			PDO::ATTR_CASE => PDO::CASE_LOWER,
+			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+			PDO::ATTR_ORACLE_NULLS => PDO::NULL_NATURAL,
+			PDO::ATTR_STRINGIFY_FETCHES => false);
 	/**
 	 * The quote character for stuff like column and field names.
 	 * @var string
@@ -85,8 +85,8 @@ abstract class Connection
 		if (strpos($connection_string_or_connection_name, '://') === false)
 		{
 			$connection_string = $connection_string_or_connection_name ?
-				$config->get_connection($connection_string_or_connection_name) :
-				$config->get_default_connection_string();
+			$config->get_connection($connection_string_or_connection_name) :
+			$config->get_default_connection_string();
 		}
 		else
 			$connection_string = $connection_string_or_connection_name;
@@ -427,7 +427,7 @@ abstract class Connection
 	public function quote_name($string)
 	{
 		return $string[0] === static::$QUOTE_CHARACTER || $string[strlen($string) - 1] === static::$QUOTE_CHARACTER ?
-			$string : static::$QUOTE_CHARACTER . $string . static::$QUOTE_CHARACTER;
+		$string : static::$QUOTE_CHARACTER . $string . static::$QUOTE_CHARACTER;
 	}
 
 	/**
@@ -502,7 +502,7 @@ abstract class Connection
 
 	/*
 	 * Returns an array mapping of native database types
-	 */
+	*/
 
 	abstract public function native_database_types();
 

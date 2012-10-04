@@ -163,7 +163,7 @@ class SQLBuilder
 		if (is_hash($mixed))
 			$this->data = $mixed;
 		elseif (is_string($mixed))
-			$this->update = $mixed;
+		$this->update = $mixed;
 		else
 			throw new ActiveRecordException('Updating requires a hash or string.');
 
@@ -194,7 +194,7 @@ class SQLBuilder
 			if (strpos($v,' asc') !== false)
 				$parts[$i] = preg_replace('/asc/i','DESC',$parts[$i]);
 			elseif (strpos($v,' desc') !== false)
-				$parts[$i] = preg_replace('/desc/i','ASC',$parts[$i]);
+			$parts[$i] = preg_replace('/desc/i','ASC',$parts[$i]);
 			else
 				$parts[$i] .= ' DESC';
 		}
@@ -351,8 +351,8 @@ class SQLBuilder
 		if ($this->sequence)
 		{
 			$sql =
-				"INSERT INTO $this->table($keys," . $this->connection->quote_name($this->sequence[0]) .
-				") VALUES(?," . $this->connection->next_sequence_value($this->sequence[1]) . ")";
+			"INSERT INTO $this->table($keys," . $this->connection->quote_name($this->sequence[0]) .
+			") VALUES(?," . $this->connection->next_sequence_value($this->sequence[1]) . ")";
 		}
 		else
 			$sql = "INSERT INTO $this->table($keys) VALUES(?)";

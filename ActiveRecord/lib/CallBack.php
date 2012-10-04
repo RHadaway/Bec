@@ -64,21 +64,21 @@ class CallBack
 	 * @var array
 	 */
 	static protected $VALID_CALLBACKS = array(
-		'after_construct',
-		'before_save',
-		'after_save',
-		'before_create',
-		'after_create',
-		'before_update',
-		'after_update',
-		'before_validation',
-		'after_validation',
-		'before_validation_on_create',
-		'after_validation_on_create',
-		'before_validation_on_update',
-		'after_validation_on_update',
-		'before_destroy',
-		'after_destroy'
+			'after_construct',
+			'before_save',
+			'after_save',
+			'before_create',
+			'after_create',
+			'before_update',
+			'after_update',
+			'before_validation',
+			'after_validation',
+			'before_validation_on_create',
+			'after_validation_on_create',
+			'before_validation_on_update',
+			'after_validation_on_update',
+			'before_destroy',
+			'after_destroy'
 	);
 
 	/**
@@ -127,7 +127,7 @@ class CallBack
 			// simply define a method named the same as something in $VALID_CALLBACKS
 			// and the callback is auto-registered
 			elseif ($this->klass->hasMethod($name))
-				$this->register($name,$name);
+			$this->register($name,$name);
 		}
 	}
 
@@ -229,13 +229,13 @@ class CallBack
 				{
 					// Method is private or protected
 					throw new ActiveRecordException("Callback methods need to be public (or anonymous closures). " .
-						"Please change the visibility of " . $this->klass->getName() . "->" . $closure_or_method_name . "()");
+							"Please change the visibility of " . $this->klass->getName() . "->" . $closure_or_method_name . "()");
 				}
 				else
 				{
 					// i'm a dirty ruby programmer
 					throw new ActiveRecordException("Unknown method for callback: $name" .
-						(is_string($closure_or_method_name) ? ": #$closure_or_method_name" : ""));
+							(is_string($closure_or_method_name) ? ": #$closure_or_method_name" : ""));
 				}
 			}
 		}

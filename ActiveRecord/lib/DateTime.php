@@ -44,22 +44,22 @@ class DateTime extends \DateTime
 	 * Pre-defined format strings.
 	 */
 	public static $FORMATS = array(
-		'db'      => 'Y-m-d H:i:s',
-		'number'  => 'YmdHis',
-		'time'    => 'H:i',
-		'short'   => 'd M H:i',
-		'long'    => 'F d, Y H:i',
-		'atom'    => \DateTime::ATOM,
-		'cookie'  => \DateTime::COOKIE,
-		'iso8601' => \DateTime::ISO8601,
-		'rfc822'  => \DateTime::RFC822,
-		'rfc850'  => \DateTime::RFC850,
-		'rfc1036' => \DateTime::RFC1036,
-		'rfc1123' => \DateTime::RFC1123,
-		'rfc2822' => \DateTime::RFC2822,
-		'rfc3339' => \DateTime::RFC3339,
-		'rss'     => \DateTime::RSS,
-		'w3c'     => \DateTime::W3C);
+			'db'      => 'Y-m-d H:i:s',
+			'number'  => 'YmdHis',
+			'time'    => 'H:i',
+			'short'   => 'd M H:i',
+			'long'    => 'F d, Y H:i',
+			'atom'    => \DateTime::ATOM,
+			'cookie'  => \DateTime::COOKIE,
+			'iso8601' => \DateTime::ISO8601,
+			'rfc822'  => \DateTime::RFC822,
+			'rfc850'  => \DateTime::RFC850,
+			'rfc1036' => \DateTime::RFC1036,
+			'rfc1123' => \DateTime::RFC1123,
+			'rfc2822' => \DateTime::RFC2822,
+			'rfc3339' => \DateTime::RFC3339,
+			'rss'     => \DateTime::RSS,
+			'w3c'     => \DateTime::W3C);
 
 	private $model;
 	private $attribute_name;
@@ -107,7 +107,7 @@ class DateTime extends \DateTime
 
 		// format is a friendly
 		if (array_key_exists($format, self::$FORMATS))
-			 return self::$FORMATS[$format];
+			return self::$FORMATS[$format];
 
 		// raw format
 		return $format;

@@ -57,7 +57,7 @@ class Table
 		if (!isset(self::$cache[$model_class_name]))
 		{
 			/* do not place set_assoc in constructor..it will lead to infinite loop due to
-			   relationships requesting the model's table, but the cache hasn't been set yet */
+			 relationships requesting the model's table, but the cache hasn't been set yet */
 			self::$cache[$model_class_name] = new Table($model_class_name);
 			self::$cache[$model_class_name]->set_associations();
 		}
@@ -86,8 +86,12 @@ class Table
 		$this->set_setters_and_getters();
 
 		$this->callback = new CallBack($class_name);
-		$this->callback->register('before_save', function(Model $model) { $model->set_timestamps(); }, array('prepend' => true));
-		$this->callback->register('after_save', function(Model $model) { $model->reset_dirty(); }, array('prepend' => true));
+		$this->callback->register('before_save', function(Model $model) {
+			$model->set_timestamps();
+		}, array('prepend' => true));
+		$this->callback->register('after_save', function(Model $model) {
+			$model->reset_dirty();
+		}, array('prepend' => true));
 	}
 
 	public function reestablish_connection($close=true)
@@ -367,7 +371,9 @@ class Table
 
 		$table_name = $this->get_fully_qualified_table_name($quote_name);
 		$conn = $this->conn;
-		$this->columns = Cache::get("get_meta_data-$table_name", function() use ($conn, $table_name) { return $conn->columns($table_name); });
+		$this->columns = Cache::get("get_meta_data-$table_name", function() use ($conn, $table_name) {
+			return $conn->columns($table_name);
+		});
 	}
 
 	/**
@@ -521,9 +527,9 @@ class Table
 					$delegate['prefix'] = null;
 
 				$new_delegate = array(
-					'to'		=> $delegate['to'],
-					'prefix'	=> $delegate['prefix'],
-					'delegate'	=> array());
+						'to'		=> $delegate['to'],
+						'prefix'	=> $delegate['prefix'],
+						'delegate'	=> array());
 
 				foreach ($delegate as $name => $value)
 				{
@@ -549,7 +555,7 @@ class Table
 
 		if (!empty($getters) || !empty($setters))
 			trigger_error('static::$getters and static::$setters are deprecated. Please define your setters and getters by declaring methods in your model prefixed with get_ or set_. See
-			http://www.phpactiverecord.org/projects/main/wiki/Utilities#attribute-setters and http://www.phpactiverecord.org/projects/main/wiki/Utilities#attribute-getters on how to make use of this option.', E_USER_DEPRECATED);
+					http://www.phpactiverecord.org/projects/main/wiki/Utilities#attribute-setters and http://www.phpactiverecord.org/projects/main/wiki/Utilities#attribute-getters on how to make use of this option.', E_USER_DEPRECATED);
 	}
 };
 ?>

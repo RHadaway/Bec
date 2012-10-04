@@ -25,22 +25,22 @@ class Column
 	 * @var array
 	 */
 	static $TYPE_MAPPING = array(
-		'datetime'	=> self::DATETIME,
-		'timestamp'	=> self::DATETIME,
-		'date'		=> self::DATE,
-		'time'		=> self::TIME,
+			'datetime'	=> self::DATETIME,
+			'timestamp'	=> self::DATETIME,
+			'date'		=> self::DATE,
+			'time'		=> self::TIME,
 
-		'int'		=> self::INTEGER,
-		'tinyint'	=> self::INTEGER,
-		'smallint'	=> self::INTEGER,
-		'mediumint'	=> self::INTEGER,
-		'bigint'	=> self::INTEGER,
+			'int'		=> self::INTEGER,
+			'tinyint'	=> self::INTEGER,
+			'smallint'	=> self::INTEGER,
+			'mediumint'	=> self::INTEGER,
+			'bigint'	=> self::INTEGER,
 
-		'float'		=> self::DECIMAL,
-		'double'	=> self::DECIMAL,
-		'numeric'	=> self::DECIMAL,
-		'decimal'	=> self::DECIMAL,
-		'dec'		=> self::DECIMAL);
+			'float'		=> self::DECIMAL,
+			'double'	=> self::DECIMAL,
+			'numeric'	=> self::DECIMAL,
+			'decimal'	=> self::DECIMAL,
+			'dec'		=> self::DECIMAL);
 
 	/**
 	 * The true name of this column.

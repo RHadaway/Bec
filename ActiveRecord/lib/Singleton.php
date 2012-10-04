@@ -41,7 +41,8 @@ abstract class Singleton
 	 *
 	 * @return void
 	 */
-	final private function __clone() {}
+	final private function __clone() {
+	}
 
 	/**
 	 * Similar to a get_called_class() for a child class to invoke.
@@ -51,7 +52,7 @@ abstract class Singleton
 	final protected function get_called_class()
 	{
 		$backtrace = debug_backtrace();
-    	return get_class($backtrace[2]['object']);
+		return get_class($backtrace[2]['object']);
 	}
 }
 ?>

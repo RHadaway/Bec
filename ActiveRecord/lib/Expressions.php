@@ -11,7 +11,7 @@ namespace ActiveRecord;
  * 'name = :name AND author = :author'
  * 'id = IN(:ids)'
  * 'id IN(:subselect)'
- * 
+ *
  * @package ActiveRecord
  */
 class Expressions
@@ -90,7 +90,7 @@ class Expressions
 	public function to_s($substitute=false, &$options=null)
 	{
 		if (!$options) $options = array();
-		
+
 		$values = array_key_exists('values',$options) ? $options['values'] : $this->values;
 
 		$ret = "";
@@ -114,7 +114,7 @@ class Expressions
 				}
 			}
 			elseif ($ch == '\'' && $i > 0 && $this->expressions[$i-1] != '\\')
-				++$quotes;
+			++$quotes;
 
 			$ret .= $ch;
 		}
@@ -133,7 +133,7 @@ class Expressions
 			if (is_array($value))
 				$sql .= "$g$name IN(?)";
 			elseif (is_null($value))
-				$sql .= "$g$name IS ?";
+			$sql .= "$g$name IS ?";
 			else
 				$sql .= "$g$name=?";
 

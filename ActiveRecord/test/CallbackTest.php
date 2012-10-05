@@ -24,8 +24,12 @@ class CallBackTest extends DatabaseTest
 	public function assert_implicit_save($first_method, $second_method)
 	{
 		$i_ran = array();
-		$this->callback->register($first_method,function($model) use (&$i_ran, $first_method) { $i_ran[] = $first_method; });
-		$this->callback->register($second_method,function($model) use (&$i_ran, $second_method) { $i_ran[] = $second_method; });
+		$this->callback->register($first_method,function($model) use (&$i_ran, $first_method) {
+			$i_ran[] = $first_method;
+		});
+		$this->callback->register($second_method,function($model) use (&$i_ran, $second_method) {
+			$i_ran[] = $second_method;
+		});
 		$this->callback->invoke(null,$second_method);
 		$this->assert_equals(array($first_method,$second_method),$i_ran);
 	}
@@ -71,7 +75,8 @@ class CallBackTest extends DatabaseTest
 
 	public function test_register_with_closure()
 	{
-		$this->callback->register('after_construct',function($mode) { });
+		$this->callback->register('after_construct',function($mode) {
+		});
 	}
 
 	public function test_register_with_null_definition()
@@ -131,7 +136,8 @@ class CallBackTest extends DatabaseTest
 
 	public function test_register_closure_callback()
 	{
-		$closure = function($model) {};
+		$closure = function($model) {
+		};
 		$this->callback->register('after_save',$closure);
 		$this->assert_equals(array($closure),$this->callback->get_callbacks('after_save'));
 	}
@@ -158,7 +164,9 @@ class CallBackTest extends DatabaseTest
 	public function test_invoke_closure()
 	{
 		$i_ran = false;
-		$this->callback->register('after_validation',function($model) use (&$i_ran) { $i_ran = true; });
+		$this->callback->register('after_validation',function($model) use (&$i_ran) {
+			$i_ran = true;
+		});
 		$this->callback->invoke(null,'after_validation');
 		$this->assert_true($i_ran);
 	}
@@ -182,20 +190,26 @@ class CallBackTest extends DatabaseTest
 
 	public function test_before_callbacks_pass_on_false_return_callback_returned_false()
 	{
-		$this->callback->register('before_validation',function($model) { return false; });
+		$this->callback->register('before_validation',function($model) {
+			return false;
+		});
 		$this->assert_false($this->callback->invoke(null,'before_validation'));
 	}
 
 	public function test_before_callbacks_does_not_pass_on_false_for_after_callbacks()
 	{
-		$this->callback->register('after_validation',function($model) { return false; });
+		$this->callback->register('after_validation',function($model) {
+			return false;
+		});
 		$this->assert_true($this->callback->invoke(null,'after_validation'));
 	}
 
 	public function test_gh_28_after_create_should_be_invoked_after_auto_incrementing_pk_is_set()
 	{
 		$that = $this;
-		VenueCB::$after_create = function($model) use ($that) { $that->assert_not_null($model->id); };
+		VenueCB::$after_create = function($model) use ($that) {
+			$that->assert_not_null($model->id);
+		};
 		ActiveRecord\Table::clear_cache('VenueCB');
 		$venue = VenueCB::find(1);
 		$venue = new VenueCB($venue->attributes());
@@ -212,9 +226,15 @@ class CallBackTest extends DatabaseTest
 
 		$i_ran = false;
 		$i_should_have_ran = false;
-		$table->callback->register('before_save', function($model) use (&$i_should_have_ran) { $i_should_have_ran = true; });
-		$table->callback->register('before_create',function($model) use (&$i_ran) { $i_ran = true; });
-		$table->callback->register('after_create',function($model) use (&$i_ran) { $i_ran = true; });
+		$table->callback->register('before_save', function($model) use (&$i_should_have_ran) {
+			$i_should_have_ran = true;
+		});
+		$table->callback->register('before_create',function($model) use (&$i_ran) {
+			$i_ran = true;
+		});
+		$table->callback->register('after_create',function($model) use (&$i_ran) {
+			$i_ran = true;
+		});
 
 		$v = VenueCB::find(1);
 		$v->id = null;
@@ -233,9 +253,15 @@ class CallBackTest extends DatabaseTest
 
 		$i_ran = false;
 		$i_should_have_ran = false;
-		$table->callback->register('before_save', function($model) use (&$i_should_have_ran) { $i_should_have_ran = true; });
-		$table->callback->register('before_update',function($model) use (&$i_ran) { $i_ran = true; });
-		$table->callback->register('after_save',function($model) use (&$i_ran) { $i_ran = true; });
+		$table->callback->register('before_save', function($model) use (&$i_should_have_ran) {
+			$i_should_have_ran = true;
+		});
+		$table->callback->register('before_update',function($model) use (&$i_ran) {
+			$i_ran = true;
+		});
+		$table->callback->register('after_save',function($model) use (&$i_ran) {
+			$i_ran = true;
+		});
 
 		$v = VenueCB::find(1);
 		$v->name .= 'test';
@@ -254,8 +280,12 @@ class CallBackTest extends DatabaseTest
 		$table = ActiveRecord\Table::load('VenueCB');
 
 		$i_ran = false;
-		$table->callback->register('before_destroy',function($model) use (&$i_ran) { $i_ran = true; });
-		$table->callback->register('after_destroy',function($model) use (&$i_ran) { $i_ran = true; });
+		$table->callback->register('before_destroy',function($model) use (&$i_ran) {
+			$i_ran = true;
+		});
+		$table->callback->register('after_destroy',function($model) use (&$i_ran) {
+			$i_ran = true;
+		});
 
 		$v = VenueCB::find(1);
 		$ret = $v->delete();

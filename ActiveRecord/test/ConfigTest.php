@@ -6,7 +6,8 @@ use ActiveRecord\ConfigException;
 
 class TestLogger
 {
-	private function log() {}
+	private function log() {
+	}
 }
 
 class ConfigTest extends SnakeCase_PHPUnit_Framework_TestCase

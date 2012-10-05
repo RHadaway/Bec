@@ -6,7 +6,7 @@ class BookPresence extends ActiveRecord\Model
 	static $table_name = 'books';
 
 	static $validates_presence_of = array(
-		array('name')
+			array('name')
 	);
 }
 
@@ -15,7 +15,7 @@ class AuthorPresence extends ActiveRecord\Model
 	static $table_name = 'authors';
 
 	static $validates_presence_of = array(
-		array('some_date')
+			array('some_date')
 	);
 };
 
@@ -38,7 +38,7 @@ class ValidatesPresenceOfTest extends DatabaseTest
 		$author = new AuthorPresence();
 		$this->assert_false($author->is_valid());
 	}
-	
+
 	public function test_invalid_null()
 	{
 		$book = new BookPresence(array('name' => null));

@@ -32,7 +32,7 @@ use ArrayIterator;
  * $person->state = 'this is not two characters';
  *
  * if (!$person->is_valid())
- *   print_r($person->errors);
+ 	*   print_r($person->errors);
  * </code>
  *
  * @package ActiveRecord
@@ -47,39 +47,39 @@ class Validations
 	private $record;
 
 	private static $VALIDATION_FUNCTIONS = array(
-		'validates_presence_of',
-		'validates_size_of',
-		'validates_length_of',
-		'validates_inclusion_of',
-		'validates_exclusion_of',
-		'validates_format_of',
-		'validates_numericality_of',
-		'validates_uniqueness_of'
+			'validates_presence_of',
+			'validates_size_of',
+			'validates_length_of',
+			'validates_inclusion_of',
+			'validates_exclusion_of',
+			'validates_format_of',
+			'validates_numericality_of',
+			'validates_uniqueness_of'
 	);
 
 	private static $DEFAULT_VALIDATION_OPTIONS = array(
-		'on' => 'save',
-		'allow_null' => false,
-		'allow_blank' => false,
-		'message' => null,
+			'on' => 'save',
+			'allow_null' => false,
+			'allow_blank' => false,
+			'message' => null,
 	);
 
 	private static  $ALL_RANGE_OPTIONS = array(
-		'is' => null,
-		'within' => null,
-		'in' => null,
-		'minimum' => null,
-		'maximum' => null,
+			'is' => null,
+			'within' => null,
+			'in' => null,
+			'minimum' => null,
+			'maximum' => null,
 	);
 
 	private static $ALL_NUMERICALITY_CHECKS = array(
-		'greater_than' => null,
-		'greater_than_or_equal_to'  => null,
-		'equal_to' => null,
-		'less_than' => null,
-		'less_than_or_equal_to' => null,
-		'odd' => null,
-		'even' => null
+			'greater_than' => null,
+			'greater_than_or_equal_to'  => null,
+			'equal_to' => null,
+			'less_than' => null,
+			'less_than_or_equal_to' => null,
+			'odd' => null,
+			'even' => null
 	);
 
 	/**
@@ -260,7 +260,7 @@ class Validations
 			if (isset($options['in']))
 				$enum = $options['in'];
 			elseif (isset($options['within']))
-				$enum = $options['within'];
+			$enum = $options['within'];
 
 			if (!is_array($enum))
 				array($enum);
@@ -360,16 +360,16 @@ class Validations
 						$this->record->add($attribute, $message);
 
 					elseif ('greater_than_or_equal_to' == $option && !($var >= $option_value))
-						$this->record->add($attribute, $message);
+					$this->record->add($attribute, $message);
 
 					elseif ('equal_to' == $option && !($var == $option_value))
-						$this->record->add($attribute, $message);
+					$this->record->add($attribute, $message);
 
 					elseif ('less_than' == $option && !($var < $option_value))
-						$this->record->add($attribute, $message);
+					$this->record->add($attribute, $message);
 
 					elseif ('less_than_or_equal_to' == $option && !($var <= $option_value))
-						$this->record->add($attribute, $message);
+					$this->record->add($attribute, $message);
 				}
 				else
 				{
@@ -431,7 +431,7 @@ class Validations
 				continue;
 
 			if (!@preg_match($expression, $var))
-			$this->record->add($attribute, $options['message']);
+				$this->record->add($attribute, $options['message']);
 		}
 	}
 
@@ -462,9 +462,9 @@ class Validations
 	public function validates_length_of($attrs)
 	{
 		$configuration = array_merge(self::$DEFAULT_VALIDATION_OPTIONS, array(
-			'too_long'     => Errors::$DEFAULT_ERROR_MESSAGES['too_long'],
-			'too_short'    => Errors::$DEFAULT_ERROR_MESSAGES['too_short'],
-			'wrong_length' => Errors::$DEFAULT_ERROR_MESSAGES['wrong_length']
+				'too_long'     => Errors::$DEFAULT_ERROR_MESSAGES['too_long'],
+				'too_short'    => Errors::$DEFAULT_ERROR_MESSAGES['too_short'],
+				'wrong_length' => Errors::$DEFAULT_ERROR_MESSAGES['wrong_length']
 		));
 
 		foreach ($attrs as $attr)
@@ -517,7 +517,7 @@ class Validations
 						$message = $options['message'];
 					else
 						$message = $options[$messageOptions[$range_option]];
-					
+						
 
 					$message = str_replace('%d', $option, $message);
 					$attribute_value = $this->model->$attribute;
@@ -563,7 +563,7 @@ class Validations
 	public function validates_uniqueness_of($attrs)
 	{
 		$configuration = array_merge(self::$DEFAULT_VALIDATION_OPTIONS, array(
-			'message' => Errors::$DEFAULT_ERROR_MESSAGES['unique']
+				'message' => Errors::$DEFAULT_ERROR_MESSAGES['unique']
 		));
 
 		foreach ($attrs as $attr)
@@ -630,26 +630,26 @@ class Errors implements IteratorAggregate
 	private $errors;
 
 	public static $DEFAULT_ERROR_MESSAGES = array(
-		'inclusion'    => "is not included in the list",
-		'exclusion'    => "is reserved",
-		'invalid'      => "is invalid",
-		'confirmation' => "doesn't match confirmation",
-		'accepted'     => "must be accepted",
-		'empty'        => "can't be empty",
-		'blank'        => "can't be blank",
-		'too_long'     => "is too long (maximum is %d characters)",
-		'too_short'    => "is too short (minimum is %d characters)",
-		'wrong_length' => "is the wrong length (should be %d characters)",
-		'taken'        => "has already been taken",
-		'not_a_number' => "is not a number",
-		'greater_than' => "must be greater than %d",
-		'equal_to'     => "must be equal to %d",
-		'less_than'    => "must be less than %d",
-		'odd'          => "must be odd",
-		'even'         => "must be even",
-		'unique'       => "must be unique",
-		'less_than_or_equal_to' => "must be less than or equal to %d",
-		'greater_than_or_equal_to' => "must be greater than or equal to %d"
+			'inclusion'    => "is not included in the list",
+			'exclusion'    => "is reserved",
+			'invalid'      => "is invalid",
+			'confirmation' => "doesn't match confirmation",
+			'accepted'     => "must be accepted",
+			'empty'        => "can't be empty",
+			'blank'        => "can't be blank",
+			'too_long'     => "is too long (maximum is %d characters)",
+			'too_short'    => "is too short (minimum is %d characters)",
+			'wrong_length' => "is the wrong length (should be %d characters)",
+			'taken'        => "has already been taken",
+			'not_a_number' => "is not a number",
+			'greater_than' => "must be greater than %d",
+			'equal_to'     => "must be equal to %d",
+			'less_than'    => "must be less than %d",
+			'odd'          => "must be odd",
+			'even'         => "must be even",
+			'unique'       => "must be unique",
+			'less_than_or_equal_to' => "must be less than or equal to %d",
+			'greater_than_or_equal_to' => "must be greater than or equal to %d"
 	);
 
 	/**
@@ -896,7 +896,7 @@ class Errors implements IteratorAggregate
 	 *
 	 * <code>
 	 * foreach ($model->errors as $msg)
-	 *   echo "$msg\n";
+	 	*   echo "$msg\n";
 	 * </code>
 	 *
 	 * @return ArrayIterator

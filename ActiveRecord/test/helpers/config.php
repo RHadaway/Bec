@@ -4,9 +4,9 @@
  *  - PHPUnit
  *  - PEAR Log (otherwise logging SQL queries will be disabled)
  *  - Memcache (otherwise Caching tests will not be executed)
- *  
+ *
  * To run all tests : phpunit AllTests.php --slow-tests
- * To run a specific test : phpunit ????Test.php 
+ * To run a specific test : phpunit ????Test.php
  */
 
 @include_once 'Log.php';
@@ -31,10 +31,10 @@ ActiveRecord\Config::initialize(function($cfg)
 {
 	$cfg->set_model_directory(realpath(__DIR__ . '/../models'));
 	$cfg->set_connections(array(
-		'mysql'  => getenv('PHPAR_MYSQL')  ?: 'mysql://test:test@127.0.0.1/test',
-		'pgsql'  => getenv('PHPAR_PGSQL')  ?: 'pgsql://test:test@127.0.0.1/test',
-		'oci'    => getenv('PHPAR_OCI')    ?: 'oci://test:test@127.0.0.1/dev',
-		'sqlite' => getenv('PHPAR_SQLITE') ?: 'sqlite://test.db'));
+			'mysql'  => getenv('PHPAR_MYSQL')  ?: 'mysql://test:test@127.0.0.1/test',
+			'pgsql'  => getenv('PHPAR_PGSQL')  ?: 'pgsql://test:test@127.0.0.1/test',
+			'oci'    => getenv('PHPAR_OCI')    ?: 'oci://test:test@127.0.0.1/dev',
+			'sqlite' => getenv('PHPAR_SQLITE') ?: 'sqlite://test.db'));
 
 	$cfg->set_default_connection('mysql');
 
@@ -43,13 +43,13 @@ ActiveRecord\Config::initialize(function($cfg)
 		if ($GLOBALS['argv'][$i] == '--adapter')
 			$cfg->set_default_connection($GLOBALS['argv'][$i+1]);
 		elseif ($GLOBALS['argv'][$i] == '--slow-tests')
-			$GLOBALS['slow_tests'] = true;
+		$GLOBALS['slow_tests'] = true;
 	}
 
 	if (class_exists('Log_file')) // PEAR Log installed
 	{
 		$logger = new Log_file(dirname(__FILE__) . '/../log/query.log','ident',array('mode' => 0664, 'timeFormat' =>  '%Y-%m-%d %H:%M:%S'));
-	
+
 		$cfg->set_logging(true);
 		$cfg->set_logger($logger);
 	}
@@ -60,9 +60,9 @@ ActiveRecord\Config::initialize(function($cfg)
 
 		DatabaseTest::$log = false;
 	}
-	
+
 	if ($GLOBALS['show_warnings']  && !isset($GLOBALS['show_warnings_done']))
-	{ 
+	{
 		if (!extension_loaded('memcache'))
 			echo "(Cache Tests will be skipped, Memcache not found.)\n";
 	}

@@ -40,16 +40,16 @@ class RelationshipTest extends DatabaseTest
 		switch ($type)
 		{
 			case 'belongs_to';
-				$ret = Event::find(5);
-				break;
+			$ret = Event::find(5);
+			break;
 
 			case 'has_one';
-				$ret = Employee::find(1);
-				break;
+			$ret = Employee::find(1);
+			break;
 
 			case 'has_many';
-				$ret = Venue::find(2);
-				break;
+			$ret = Venue::find(2);
+			break;
 		}
 
 		return $ret;
@@ -282,10 +282,10 @@ class RelationshipTest extends DatabaseTest
 	public function test_has_many_with_sql_clause_options()
 	{
 		Venue::$has_many[0] = array('events',
-			'select' => 'type',
-			'group'  => 'type',
-			'limit'  => 2,
-			'offset' => 1);
+				'select' => 'type',
+				'group'  => 'type',
+				'limit'  => 2,
+				'offset' => 1);
 		Venue::first()->events;
 		$this->assert_sql_has($this->conn->limit("SELECT type FROM events WHERE venue_id=? GROUP BY type",1,2),Event::table()->last_sql);
 	}
@@ -508,7 +508,7 @@ class RelationshipTest extends DatabaseTest
 
 		$this->assert_sql_has("WHERE length(title) = ? AND venue_id IN(?,?) ORDER BY id asc",ActiveRecord\Table::load('Event')->last_sql);
 		$this->assert_equals(1, count($venues[0]->events));
-    }
+	}
 
 	public function test_eager_loading_has_many_x()
 	{
@@ -667,16 +667,16 @@ class RelationshipTest extends DatabaseTest
 	{
 		$old = Book::$belongs_to;
 		Book::$belongs_to = array(
-			array('from_', 'class_name' => 'Author', 'foreign_key' => 'author_id'),
-			array('to', 'class_name' => 'Author', 'foreign_key' => 'secondary_author_id'),
-			array('another', 'class_name' => 'Author', 'foreign_key' => 'secondary_author_id')
+				array('from_', 'class_name' => 'Author', 'foreign_key' => 'author_id'),
+				array('to', 'class_name' => 'Author', 'foreign_key' => 'secondary_author_id'),
+				array('another', 'class_name' => 'Author', 'foreign_key' => 'secondary_author_id')
 		);
 
 		$c = ActiveRecord\Table::load('Book')->conn;
 
 		$select = "books.*, authors.name as to_author_name, {$c->quote_name('from_')}.name as from_author_name, {$c->quote_name('another')}.name as another_author_name";
 		$book = Book::find(2, array('joins' => array('to', 'from_', 'another'),
-			'select' => $select));
+				'select' => $select));
 
 		$this->assert_not_null($book->from_author_name);
 		$this->assert_not_null($book->to_author_name);

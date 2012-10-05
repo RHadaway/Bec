@@ -6,7 +6,7 @@ namespace ActiveRecord;
 
 /**
  * Adapter for Postgres (not completed yet)
- * 
+ *
  * @package ActiveRecord
  */
 class PgsqlAdapter extends Connection
@@ -47,7 +47,7 @@ SELECT
         WHERE c.oid = pg_index.indrelid
         AND a.attnum = ANY (pg_index.indkey)
         AND pg_index.indisprimary = 't'
-      ) IS NOT NULL AS pk,      
+      ) IS NOT NULL AS pk,
       REGEXP_REPLACE(REGEXP_REPLACE(REGEXP_REPLACE((SELECT pg_attrdef.adsrc
         FROM pg_attrdef
         WHERE c.oid = pg_attrdef.adrelid
@@ -121,17 +121,17 @@ SQL;
 	public function native_database_types()
 	{
 		return array(
-			'primary_key' => 'serial primary key',
-			'string' => array('name' => 'character varying', 'length' => 255),
-			'text' => array('name' => 'text'),
-			'integer' => array('name' => 'integer'),
-			'float' => array('name' => 'float'),
-			'datetime' => array('name' => 'datetime'),
-			'timestamp' => array('name' => 'timestamp'),
-			'time' => array('name' => 'time'),
-			'date' => array('name' => 'date'),
-			'binary' => array('name' => 'binary'),
-			'boolean' => array('name' => 'boolean')
+				'primary_key' => 'serial primary key',
+				'string' => array('name' => 'character varying', 'length' => 255),
+				'text' => array('name' => 'text'),
+				'integer' => array('name' => 'integer'),
+				'float' => array('name' => 'float'),
+				'datetime' => array('name' => 'datetime'),
+				'timestamp' => array('name' => 'timestamp'),
+				'time' => array('name' => 'time'),
+				'date' => array('name' => 'date'),
+				'binary' => array('name' => 'binary'),
+				'boolean' => array('name' => 'boolean')
 		);
 	}
 

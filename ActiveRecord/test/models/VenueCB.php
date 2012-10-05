@@ -12,14 +12,19 @@ class VenueCB extends ActiveRecord\Model
 
 	// DO NOT add a static $after_construct for this. we are testing
 	// auto registration of callback with this
-	public function after_construct() {}
+	public function after_construct() {
+	}
 
-	public function non_generic_after_construct() {}
+	public function non_generic_after_construct() {
+	}
 
-	public function after_destroy_one() {}
-	public function after_destroy_two() {}
+	public function after_destroy_one() {
+	}
+	public function after_destroy_two() {
+	}
 
-	public function before_destroy_using_string() {}
+	public function before_destroy_using_string() {
+	}
 
 	public function before_update_halt_execution()
 	{

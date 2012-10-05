@@ -34,7 +34,9 @@ class SqliteAdapterTest extends AdapterTest
 	{
 		$ret = array();
 		$sql = 'SELECT * FROM authors ORDER BY name ASC';
-		$this->conn->query_and_fetch($this->conn->limit($sql,null,1),function($row) use (&$ret) { $ret[] = $row; });
+		$this->conn->query_and_fetch($this->conn->limit($sql,null,1),function($row) use (&$ret) {
+			$ret[] = $row;
+		});
 
 		$this->assert_true(strpos($this->conn->last_query, 'LIMIT 1') !== false);
 	}
@@ -59,6 +61,7 @@ class SqliteAdapterTest extends AdapterTest
 	}
 
 	// not supported
-	public function test_connect_with_port() {}
+	public function test_connect_with_port() {
+	}
 }
 ?>

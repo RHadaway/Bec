@@ -25,14 +25,14 @@ if($action == 'Send'){
 	// In case any of our lines are larger than 70 characters, we should use wordwrap()
 	$message = wordwrap($message, 70);
 
-	$headers = 'From:' .$_SERVER['SERVER_ADMIN']. "\r\n" .
-			'Reply-To: '.$_POST['contact']. "\r\n" .
+	$headers = 'From: '.$_POST['cemail']. "\r\n" .
+			'Reply-To: '.$_POST['cemail']. "\r\n" .
 			//'Disposition-Notification-To'.$_POST['email']."\r\n" - to get notification
 	'X-Mailer: PHP/' . phpversion();
 
 	$subject = $_POST['subject'];
 	// Send
-	if(mail($_POST['contact'], $subject, $message))
+	if(mail($_POST['contact'], $subject, $message, $headers))
 
 	{
 

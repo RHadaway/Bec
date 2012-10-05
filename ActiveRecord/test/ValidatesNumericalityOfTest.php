@@ -6,7 +6,7 @@ class BookNumericality extends ActiveRecord\Model
 	static $table_name = 'books';
 
 	static $validates_numericality_of = array(
-		array('name')
+			array('name')
 	);
 }
 
@@ -24,7 +24,7 @@ class ValidatesNumericalityOfTest extends DatabaseTest
 	{
 		parent::set_up($connection_name);
 		BookNumericality::$validates_numericality_of = array(
-			array('numeric_test')
+				array('numeric_test')
 		);
 	}
 
@@ -153,7 +153,7 @@ class ValidatesNumericalityOfTest extends DatabaseTest
 	public function test_custom_message()
 	{
 		BookNumericality::$validates_numericality_of = array(
-			array('numeric_test', 'message' => 'Hello')
+				array('numeric_test', 'message' => 'Hello')
 		);
 		$book = new BookNumericality(array('numeric_test' => 'NaN'));
 		$book->is_valid();

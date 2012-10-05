@@ -48,7 +48,7 @@ class SqliteAdapter extends Connection
 		$c->auto_increment  = in_array(
 				strtoupper($column['type']),
 				array('INT', 'INTEGER')
-			) && $c->pk;
+		) && $c->pk;
 
 		$column['type'] = preg_replace('/ +/',' ',$column['type']);
 		$column['type'] = str_replace(array('(',')'),' ',$column['type']);
@@ -68,7 +68,7 @@ class SqliteAdapter extends Connection
 		if ($c->type == Column::DATETIME)
 			$c->length = 19;
 		elseif ($c->type == Column::DATE)
-			$c->length = 10;
+		$c->length = 10;
 
 		// From SQLite3 docs: The value is a signed integer, stored in 1, 2, 3, 4, 6,
 		// or 8 bytes depending on the magnitude of the value.
@@ -86,23 +86,25 @@ class SqliteAdapter extends Connection
 		throw new ActiveRecordException("SqliteAdapter::set_charset not supported.");
 	}
 
-	public function accepts_limit_and_order_for_update_and_delete() { return true; }
+	public function accepts_limit_and_order_for_update_and_delete() {
+		return true;
+	}
 
 	public function native_database_types()
 	{
 		return array(
-			'primary_key' => 'integer not null primary key',
-			'string' => array('name' => 'varchar', 'length' => 255),
-			'text' => array('name' => 'text'),
-			'integer' => array('name' => 'integer'),
-			'float' => array('name' => 'float'),
-			'decimal' => array('name' => 'decimal'),
-			'datetime' => array('name' => 'datetime'),
-			'timestamp' => array('name' => 'datetime'),
-			'time' => array('name' => 'time'),
-			'date' => array('name' => 'date'),
-			'binary' => array('name' => 'blob'),
-			'boolean' => array('name' => 'boolean')
+				'primary_key' => 'integer not null primary key',
+				'string' => array('name' => 'varchar', 'length' => 255),
+				'text' => array('name' => 'text'),
+				'integer' => array('name' => 'integer'),
+				'float' => array('name' => 'float'),
+				'decimal' => array('name' => 'decimal'),
+				'datetime' => array('name' => 'datetime'),
+				'timestamp' => array('name' => 'datetime'),
+				'time' => array('name' => 'time'),
+				'date' => array('name' => 'date'),
+				'binary' => array('name' => 'blob'),
+				'boolean' => array('name' => 'boolean')
 		);
 	}
 

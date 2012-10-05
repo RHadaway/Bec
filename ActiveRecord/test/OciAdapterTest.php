@@ -31,11 +31,16 @@ class OciAdapterTest extends AdapterTest
 		$this->assert_equals('01-Jan-2009',$this->conn->date_to_string(date_create('2009-01-01 01:01:01 EST')));
 	}
 
-	public function test_insert_id() {}
-	public function test_insert_id_with_params() {}
-	public function test_insert_id_should_return_explicitly_inserted_id() {}
-	public function test_columns_time() {}
-	public function test_columns_sequence() {}
+	public function test_insert_id() {
+	}
+	public function test_insert_id_with_params() {
+	}
+	public function test_insert_id_should_return_explicitly_inserted_id() {
+	}
+	public function test_columns_time() {
+	}
+	public function test_columns_sequence() {
+	}
 
 	public function test_set_charset()
 	{

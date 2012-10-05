@@ -8,7 +8,7 @@ class AdapterTest extends DatabaseTest
 	public function set_up($connection_name=null)
 	{
 		if (($connection_name && !in_array($connection_name, PDO::getAvailableDrivers())) ||
-			ActiveRecord\Config::instance()->get_connection($connection_name) == 'skip')
+				ActiveRecord\Config::instance()->get_connection($connection_name) == 'skip')
 			$this->mark_test_skipped($connection_name . ' drivers are not present');
 
 		parent::set_up($connection_name);
@@ -261,7 +261,9 @@ class AdapterTest extends DatabaseTest
 		$names = array('author_id','parent_author_id','name','updated_at','created_at','some_Date','some_time','some_text','encrypted_password','mixedCaseField');
 
 		if ($this->conn instanceof ActiveRecord\OciAdapter)
-			$names = array_filter(array_map('strtolower',$names),function($s) { $s !== 'some_time'; });
+			$names = array_filter(array_map('strtolower',$names),function($s) {
+			$s !== 'some_time';
+		});
 
 		foreach ($names as $field)
 			$this->assert_true(array_key_exists($field,$columns));
@@ -291,7 +293,9 @@ class AdapterTest extends DatabaseTest
 	{
 		$ret = array();
 		$sql = 'SELECT * FROM authors ORDER BY name ASC';
-		$this->conn->query_and_fetch($this->conn->limit($sql,$offset,$limit),function($row) use (&$ret) { $ret[] = $row; });
+		$this->conn->query_and_fetch($this->conn->limit($sql,$offset,$limit),function($row) use (&$ret) {
+			$ret[] = $row;
+		});
 		return ActiveRecord\collect($ret,'author_id');
 	}
 
@@ -383,7 +387,9 @@ class AdapterTest extends DatabaseTest
 	{
 		$c = $this->conn;
 		$q = $c::$QUOTE_CHARACTER;
-		$qn = function($s) use ($c) { return $c->quote_name($s); };
+		$qn = function($s) use ($c) {
+			return $c->quote_name($s);
+		};
 
 		$this->assert_equals("{$q}string", $qn("{$q}string"));
 		$this->assert_equals("string{$q}", $qn("string{$q}"));

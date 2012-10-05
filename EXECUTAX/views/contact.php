@@ -63,6 +63,7 @@
 						<option value='brian@exectax.ca'>Brian Bentley</option>
 						<option value='jim@executax.ca'>Jim Reeves</option>
 						<option value='tineke@executax.ca'>Tineke Vos</option>
+						<option value='rebeccahadaway@gmail.com'>me</option>
 					</select><br/>
 				
 					<label>Name:</label><input type='text' id='name' for='name' name='name'/><span id='nameerror'></span><br />

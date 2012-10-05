@@ -28,7 +28,9 @@ class SQLBuilderTest extends DatabaseTest
 		$this->assert_sql_has($expected_sql,array_shift($cond));
 
 		if ($values)
-			$this->assert_equals(array_values(array_filter($values,function($s) { return $s !== null; })),array_values($cond));
+			$this->assert_equals(array_values(array_filter($values,function($s) {
+			return $s !== null;
+		})),array_values($cond));
 		else
 			$this->assert_equals(array(),$cond);
 	}
@@ -156,7 +158,7 @@ class SQLBuilderTest extends DatabaseTest
 	public function test_update_with_hash()
 	{
 		$this->sql->update(array('id' => 1, 'name' => 'Tito'))->where('id=1 AND name IN(?)',array('Tito','Mexican'));
- 		$this->assert_sql_has("UPDATE authors SET id=?, name=? WHERE id=1 AND name IN(?,?)",(string)$this->sql);
+		$this->assert_sql_has("UPDATE authors SET id=?, name=? WHERE id=1 AND name IN(?,?)",(string)$this->sql);
 		$this->assert_equals(array(1,'Tito','Tito','Mexican'),$this->sql->bind_values());
 	}
 

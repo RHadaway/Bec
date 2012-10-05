@@ -16,13 +16,15 @@ class UtilsTest extends SnakeCase_PHPUnit_Framework_TestCase
 		$this->object_array[1]->b = "1b";
 
 		$this->array_hash = array(
-			array("a" => "0a", "b" => "0b"),
-			array("a" => "1a", "b" => "1b"));
+				array("a" => "0a", "b" => "0b"),
+				array("a" => "1a", "b" => "1b"));
 	}
 
 	public function test_collect_with_array_of_objects_using_closure()
 	{
-		$this->assert_equals(array("0a","1a"),AR\collect($this->object_array,function($obj) { return $obj->a; }));
+		$this->assert_equals(array("0a","1a"),AR\collect($this->object_array,function($obj) {
+			return $obj->a;
+		}));
 	}
 
 	public function test_collect_with_array_of_objects_using_string()
@@ -32,7 +34,9 @@ class UtilsTest extends SnakeCase_PHPUnit_Framework_TestCase
 
 	public function test_collect_with_array_hash_using_closure()
 	{
-		$this->assert_equals(array("0a","1a"),AR\collect($this->array_hash,function($item) { return $item["a"]; }));
+		$this->assert_equals(array("0a","1a"),AR\collect($this->array_hash,function($item) {
+			return $item["a"];
+		}));
 	}
 
 	public function test_collect_with_array_hash_using_string()
@@ -40,8 +44,8 @@ class UtilsTest extends SnakeCase_PHPUnit_Framework_TestCase
 		$this->assert_equals(array("0a","1a"),AR\collect($this->array_hash,"a"));
 	}
 
-    public function test_array_flatten()
-    {
+	public function test_array_flatten()
+	{
 		$this->assert_equals(array(), AR\array_flatten(array()));
 		$this->assert_equals(array(1), AR\array_flatten(array(1)));
 		$this->assert_equals(array(1), AR\array_flatten(array(array(1))));

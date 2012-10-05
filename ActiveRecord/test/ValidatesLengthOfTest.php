@@ -20,7 +20,7 @@ class ValidatesLengthOfTest extends DatabaseTest
 		parent::set_up($connection_name);
 		BookLength::$validates_length_of[0] = array('name', 'allow_blank' => false, 'allow_null' => false);
 	}
-	
+
 	public function test_within()
 	{
 		BookLength::$validates_length_of[0]['within'] = array(1, 5);
@@ -57,7 +57,7 @@ class ValidatesLengthOfTest extends DatabaseTest
 		$book->is_valid();
 		$this->assert_equals(array('Name is not between 2 and 5 characters'),$book->errors->full_messages());
 	}
-	
+
 	public function test_valid_in()
 	{
 		BookLength::$validates_length_of[0]['in'] = array(1, 5);
@@ -136,7 +136,7 @@ class ValidatesLengthOfTest extends DatabaseTest
 		$this->assert_true($book->errors->is_invalid('name'));
 		$this->assert_equals('is too short (minimum is 1 characters)', $book->errors->on('name'));
 	}
-	
+
 	public function test_invalid_null_minimum()
 	{
 		BookLength::$validates_length_of[0]['minimum'] = 1;
@@ -146,9 +146,9 @@ class ValidatesLengthOfTest extends DatabaseTest
 		$book->save();
 		$this->assert_true($book->errors->is_invalid('name'));
 		$this->assert_equals('is too short (minimum is 1 characters)', $book->errors->on('name'));
-		
+
 	}
-	
+
 	public function test_valid_null_maximum()
 	{
 		BookLength::$validates_length_of[0]['maximum'] = 1;
@@ -303,7 +303,7 @@ class ValidatesLengthOfTest extends DatabaseTest
 		$book->is_valid();
 		$this->assert_equals(array("Name is too short (minimum is 2 characters)"),$book->errors->full_messages());
 	}
-	
+
 	public function test_validates_length_of_min_max_custom_message()
 	{
 		BookLength::$validates_length_of[0] = array('name', 'maximum' => 10, 'message' => 'is far too long');
@@ -316,7 +316,7 @@ class ValidatesLengthOfTest extends DatabaseTest
 		$book->is_valid();
 		$this->assert_equals(array("Name is far too short"),$book->errors->full_messages());
 	}
-	
+
 	public function test_validates_length_of_min_max_custom_message_overridden()
 	{
 		BookLength::$validates_length_of[0] = array('name', 'minimum' => 10, 'too_short' => 'is too short', 'message' => 'is custom message');

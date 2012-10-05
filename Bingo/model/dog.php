@@ -1,21 +1,21 @@
 <?php 
-class Animal 
+class Animal
 {
 
-        public $shungry = 'hell yeah I am hungry!';
+	public $shungry = 'hell yeah I am hungry!';
 
-        
-        function eat($food)
 
-        {
-        	if ($food == 'salad')
-        	{
-        		
-        		 $this->shungry = 'not so much.';
-        	}
-              
-        }
-        
+	function eat($food)
+
+	{
+		if ($food == 'salad')
+		{
+
+			$this->shungry = 'not so much.';
+		}
+
+	}
+
 }
 
 interface Gender
@@ -31,16 +31,16 @@ interface Showable
 
 class Dog extends Animal implements Gender, Showable
 {
-	    function __construct($sBreed)
-        {
-        	$this->sBreed = ($sBreed);	
-        	$this->sGender = Gender::MALE;
-        	$this->show();
-        }
-        function show()
-        {
-        	foreach($this as $name => $value){
-        		echo "<li>$name = $value</li>";
-        	}
-        }
+	function __construct($sBreed)
+	{
+		$this->sBreed = ($sBreed);
+		$this->sGender = Gender::MALE;
+		$this->show();
+	}
+	function show()
+	{
+		foreach($this as $name => $value){
+			echo "<li>$name = $value</li>";
+		}
+	}
 }?>

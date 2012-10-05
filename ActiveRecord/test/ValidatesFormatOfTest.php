@@ -5,7 +5,7 @@ class BookFormat extends ActiveRecord\Model
 {
 	static $table = 'books';
 	static $validates_format_of = array(
-		array('name')
+			array('name')
 	);
 };
 

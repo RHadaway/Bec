@@ -8,7 +8,7 @@ use PDO;
 
 /**
  * Adapter for OCI (not completed yet).
- * 
+ *
  * @package ActiveRecord
  */
 class OciAdapter extends Connection
@@ -28,8 +28,10 @@ class OciAdapter extends Connection
 		}
 	}
 
-	public function supports_sequences() { return true; }
-	
+	public function supports_sequences() {
+		return true;
+	}
+
 	public function get_next_sequence_value($sequence_name)
 	{
 		return $this->query_and_fetch_one('SELECT ' . $this->next_sequence_value($sequence_name) . ' FROM dual');
@@ -60,23 +62,23 @@ class OciAdapter extends Connection
 	{
 		$offset = intval($offset);
 		$stop = $offset + intval($limit);
-		return 
-			"SELECT * FROM (SELECT a.*, rownum ar_rnum__ FROM ($sql) a " .
-			"WHERE rownum <= $stop) WHERE ar_rnum__ > $offset";
+		return
+		"SELECT * FROM (SELECT a.*, rownum ar_rnum__ FROM ($sql) a " .
+		"WHERE rownum <= $stop) WHERE ar_rnum__ > $offset";
 	}
 
 	public function query_column_info($table)
 	{
-		$sql = 
-			"SELECT c.column_name, c.data_type, c.data_length, c.data_scale, c.data_default, c.nullable, " .
-				"(SELECT a.constraint_type " .
-				"FROM all_constraints a, all_cons_columns b " .
-				"WHERE a.constraint_type='P' " .
-				"AND a.constraint_name=b.constraint_name " .
-				"AND a.table_name = t.table_name AND b.column_name=c.column_name) AS pk " .
-			"FROM user_tables t " .
-			"INNER JOIN user_tab_columns c on(t.table_name=c.table_name) " .
-			"WHERE t.table_name=?";
+		$sql =
+		"SELECT c.column_name, c.data_type, c.data_length, c.data_scale, c.data_default, c.nullable, " .
+		"(SELECT a.constraint_type " .
+		"FROM all_constraints a, all_cons_columns b " .
+		"WHERE a.constraint_type='P' " .
+		"AND a.constraint_name=b.constraint_name " .
+		"AND a.table_name = t.table_name AND b.column_name=c.column_name) AS pk " .
+		"FROM user_tables t " .
+		"INNER JOIN user_tab_columns c on(t.table_name=c.table_name) " .
+		"WHERE t.table_name=?";
 
 		$values = array(strtoupper($table));
 		return $this->query($sql,$values);
@@ -100,7 +102,7 @@ class OciAdapter extends Connection
 			if ($column['data_scale'] > 0)
 				$column['data_type'] = 'decimal';
 			elseif ($column['data_scale'] == 0)
-				$column['data_type'] = 'int';
+			$column['data_type'] = 'int';
 		}
 
 		$c = new Column();
@@ -109,7 +111,7 @@ class OciAdapter extends Connection
 		$c->nullable		= $column['nullable'] == 'Y' ? true : false;
 		$c->pk				= $column['pk'] == 'P' ? true : false;
 		$c->length			= $column['data_length'];
-	
+
 		if ($column['data_type'] == 'timestamp')
 			$c->raw_type = 'datetime';
 		else
@@ -129,17 +131,17 @@ class OciAdapter extends Connection
 	public function native_database_types()
 	{
 		return array(
-			'primary_key' => "NUMBER(38) NOT NULL PRIMARY KEY",
-			'string' => array('name' => 'VARCHAR2', 'length' => 255),
-			'text' => array('name' => 'CLOB'),
-			'integer' => array('name' => 'NUMBER', 'length' => 38),
-			'float' => array('name' => 'NUMBER'),
-			'datetime' => array('name' => 'DATE'),
-			'timestamp' => array('name' => 'DATE'),
-			'time' => array('name' => 'DATE'),
-			'date' => array('name' => 'DATE'),
-			'binary' => array('name' => 'BLOB'),
-			'boolean' => array('name' => 'NUMBER', 'length' => 1)
+				'primary_key' => "NUMBER(38) NOT NULL PRIMARY KEY",
+				'string' => array('name' => 'VARCHAR2', 'length' => 255),
+				'text' => array('name' => 'CLOB'),
+				'integer' => array('name' => 'NUMBER', 'length' => 38),
+				'float' => array('name' => 'NUMBER'),
+				'datetime' => array('name' => 'DATE'),
+				'timestamp' => array('name' => 'DATE'),
+				'time' => array('name' => 'DATE'),
+				'date' => array('name' => 'DATE'),
+				'binary' => array('name' => 'BLOB'),
+				'boolean' => array('name' => 'NUMBER', 'length' => 1)
 		);
 	}
 }

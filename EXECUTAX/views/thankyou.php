@@ -54,7 +54,7 @@
 				
 				<div id="main">
 					<h3>Your message has been sent.</h3>
-					<p>We appreciate your inquiry. You will recieve a response within two business days. </p>
+					<p>We appreciate your inquiry. You will receive a response within two business days. </p>
 				</div><!-- main -->	
 			
 

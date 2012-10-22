@@ -45,20 +45,18 @@
 <body>
 	<div id="page">
 
-		<div id="container">
+		<div id="rssform">
 			<form action='.' method='post' onsubmit='return validateForm()'>
 				<fieldset>
-					<legend>RSS Feed:</legend><br /> 
-					<label>Title:</label><input type='text' id='title' for='title' name='title' />
-					<label>Description:</label><textarea rows="5" cols="50" name="description" wrap="physical"></textarea>
-					<label>Link:</label><input type='text' id='link' for='link'name='link' />
-					<label>Publish Date:</label><input type='text' id='pubdate' for='pubdate' name='pubdate' />
-					<label>Your Name:</label><input type='text' id='name' for='name' name='name' />
+					<legend>RSS Feed:</legend><br> 
+					<label>Title:</label><input type='text' id='title' for='title' name='title' /><br> 
+					<label>Description:</label><textarea rows="5" cols="50" name="description" wrap="physical"></textarea><br> 
+					<label>Link:</label><input type='text' id='link' for='link'name='link' /><br> 
+					<label>Publish Date:</label><input type='text' id='pubdate' for='pubdate' name='pubdate' /><br> 
+					<label>Your Name:</label><input type='text' id='name' for='name' name='name' /><br> 
 					<input type='submit' name='action' value='Post' />
 				</fieldset>
-
 			</form>
-
 
 		</div>
 		<!--container -->

@@ -4,12 +4,7 @@
 	Website: Executax
 	Developer: Rebecca Hadaway
 	Languages Used: HTML 5
-	Date Created: 
-	Last Revised:
-	
-	Website Description:
-	
-	External files:
+	Date Created: October 5, 2012
 	
 	-->
   
@@ -60,7 +55,7 @@
 						<option value='clientservices@executax.ca'>Client Services</option>
 						<option value='mike@executax.ca'>Mike Bott</option>
 						<option value='walt@executax.ca'>Walt Runstedler</option>
-						<option value='brian@exectax.ca'>Brian Bentley</option>
+						<option value='brian@executax.ca'>Brian Bentley</option>
 						<option value='jim@executax.ca'>Jim Reeves</option>
 						<option value='tineke@executax.ca'>Tineke Vos</option>
 						<option value='rebeccahadaway@gmail.com'>me</option>
@@ -78,10 +73,6 @@
 				</fieldset>
 				
 				</form>
-		
-				
-				
-				
 
 				<?php 	include 'views/footer.php';?>
 			

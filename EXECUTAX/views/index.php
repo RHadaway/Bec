@@ -21,6 +21,12 @@ if($action == 'Send'){
 	// The message
 	$message = $_POST['message'];
 	$subject = $_POST['subject'];
+	$sName = $_POST['name'];
+	$sCemail = $_POST['cemail'];
+	$sDphone = $_POST['dphone'];
+	$sNphone = $_POST['nphone'];
+	$message = 'name: ' . $sName . ' email: ' . $sCemail . ' daytime number: ' . $sDphone;
+	$message = ' nighttime number: ' . $sNphone . ' ' . $_POST['message'];
 
 	// In case any of our lines are larger than 70 characters, we should use wordwrap()
 	$message = wordwrap($message, 70);
@@ -31,6 +37,7 @@ if($action == 'Send'){
 	'X-Mailer: PHP/' . phpversion();
 	
 	$subject = $_POST['subject'];
+
 	// Send
 	if(mail($_POST['contact'], $subject, $message))
 

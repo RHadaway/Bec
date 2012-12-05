@@ -5,12 +5,6 @@
 	Website: Executax
 	Developer: Rebecca Hadaway
 	Languages Used: HTML 5
-	Date Created: 
-	Last Revised:
-	
-	Website Description:
-	
-	External files:
 	
 	-->
 

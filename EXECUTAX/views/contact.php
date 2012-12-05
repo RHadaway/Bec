@@ -58,7 +58,7 @@
 						<option value='brian@executax.ca'>Brian Bentley</option>
 						<option value='jim@executax.ca'>Jim Reeves</option>
 						<option value='tineke@executax.ca'>Tineke Vos</option>
-						<option value='rebeccahadaway@gmail.com'>me</option>
+						<option value='rebeccahadaway@gmail.com'>test</option>
 					</select><br/>
 				
 					<label>Name:</label><input type='text' id='name' for='name' name='name'/><span id='nameerror'></span><br />
@@ -68,7 +68,6 @@
 					<label>Subject:</label><input type='text' id='subject' for='subject' name='subject'/><br />
 					<label>Message:</label>
 						<textarea rows="5"  name="message" wrap="physical"></textarea>
-				
 					<input type='submit' name='action' value='Send'/> 
 				</fieldset>
 				

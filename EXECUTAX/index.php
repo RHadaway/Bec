@@ -1,12 +1,12 @@
 <?php 
-require_once('../adodb5/adodb.inc.php');
-require_once('../adodb5/adodb-active-record.inc.php');
+require_once('./adodb5/adodb.inc.php');
+require_once('./adodb5/adodb-active-record.inc.php');
 
 $db = NewADOConnection('mysql');
 if($_SERVER['SERVER_PORT'] == 8080){
 	$db->Connect("localhost", "root", "", "executax");
 }else{
-	$db->Connect('rhadaway.netfirmsmysql.com', 'rhadaway', 'executax', "executax");
+	$db->Connect('executax.db.9931305.hostedresource.com', 'executax', 'Taxesare#1', "executax");
 }
 
 
@@ -19,7 +19,6 @@ $action = (array_key_exists('action', $_GET)?$_GET['action']: $action);
 if($action == 'Send'){
 	//print_r($_POST);
 	// The message
-	$message = $_POST['message'];
 	$subject = $_POST['subject'];
 	$sName = $_POST['name'];
 	$sCemail = $_POST['cemail'];
@@ -28,26 +27,27 @@ if($action == 'Send'){
 	$message = 'name: ' . $sName . ' email: ' . $sCemail . ' daytime number: ' . $sDphone;
 	$message = ' nighttime number: ' . $sNphone . ' ' . $_POST['message'];
 
+	
+
 	// In case any of our lines are larger than 70 characters, we should use wordwrap()
 	$message = wordwrap($message, 70);
 
-	$headers = 'From:' .$_SERVER['SERVER_ADMIN']. "\r\n" .
-			'Reply-To: '.$_POST['contact']. "\r\n" .
+	$headers = 'From: '.$_POST['cemail']. "\r\n" .
+			'Reply-To: '.$_POST['cemail']. "\r\n" .
 			//'Disposition-Notification-To'.$_POST['email']."\r\n" - to get notification
 	'X-Mailer: PHP/' . phpversion();
-	
-	$subject = $_POST['subject'];
 
+	$subject = $_POST['subject'];
 	// Send
-	if(mail($_POST['contact'], $subject, $message))
+	if(mail($_POST['contact'], $subject, $message, $headers))
 
 	{
 
 		$oEmail = new email;
-		$oEmail->name = $_POST['name'];
-		$oEmail->cemail = $_POST['cemail'];
-		$oEmail->dphone = $_POST['dphone'];
-		$oEmail->nphone = $_POST['nphone'];
+		$oEmail->name = $sName;
+		$oEmail->cemail = $sCemail;
+		$oEmail->dphone = $sDphone;
+		$oEmail->nphone = $sNphone;
 		$oEmail->subject = $subject;
 		$oEmail->message = $_POST['message'];
 		$oDate = new DateTime();
@@ -68,17 +68,24 @@ if($action == 'Send'){
 }
 elseif($action == 'Post'){
 	//print_r($_POST);
-	
-		$oRss = new rss;
-		$oRss->title = $_POST['title'];
-		$oRss->description = $_POST['description'];
-		$oRss->link = $_POST['link'];
+
+	$oRss = new rss;
+	$oRss->title = $_POST['title'];
+	$oRss->description = $_POST['description'];
+	$oRss->link = $_POST['link'];
+	if (empty($_POST['pubdate'])){
+		$oDate = new DateTime();
+			
+		$oRss->pubdate = $oDate->format("Y-m-d");
+	}
+	else{
 		$oRss->pubdate = $_POST['pubdate'];
-		$oRss->author = $_POST['name'];
-		if(!$oRss->save()){
-			echo $oRss->ErrorMsg();
-		}
-	
+	}
+	$oRss->author = $_POST['name'];
+	if(!$oRss->save()){
+		echo $oRss->ErrorMsg();
+	}
+
 
 
 }
